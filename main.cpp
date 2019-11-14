@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include "room.h"
 
 struct Item {
   char name[];
