@@ -1,11 +1,7 @@
 #include <iostream>
 #include <cstring>
-#include "room.h"
-
-struct Item {
-  char name[];
-  
-};
+#include "Room.h"
+#include "Item.h"
 
 int main() {
   std::cout << "Zuul" << std::endl;
