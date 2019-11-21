@@ -12,6 +12,7 @@ struct Item {
 
 int main() {
   vector<Item*> *vecI = new vector<Item*>;
+  vector<Room*> *vecR = new vector<Room*>;
   int pickUp = 0;
   char moveInput[80];
   bool win = false;
