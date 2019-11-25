@@ -3,20 +3,20 @@
 #include <vector>
 #include <iterator>
 #include "Room.h"
+#include "Item.h"
 using namespace std;
 
-struct Item {
-  char name[80];
-  int location;
-};
-
 int main() {
-  vector<Item*> *vecI = new vector<Item*>;
-  vector<Room*> *vecR = new vector<Room*>;
+  vector<Room*> vecR;
+  vector<Room*>*rvecR = &vecR;
+  vector<Item*> vecI;
+  vector<Item*>*ivecI = &vecI;
   int pickUp = 0;
   char moveInput[80];
   char dropInput[80];
   char grabInput[80];
+  char tempName[80];
+  int tempLocation;
   int currentLocation;
   vector<Item*>::iterator j;
   bool win = false;
@@ -43,23 +43,29 @@ int main() {
       std::cout << "Your commands are NORTH, WEST, SOUTH, EAST, HELP, QUIT, or GRAB" << std::endl;
     }
     else if (strcmp(moveInput, "INVENTORY") == 0) {
-      for (j = vecI->begin(); j != vecI->end(); j++) {
-	std::cout << "Name: " << (*j)->name << std::endl;
+      for (j = ivecI->begin(); j != ivecI->end(); j++) {
+	std::cout << "Name: " << ((Item*)(*j))->name << std::endl;
       }
     }
     else if (strcmp(moveInput, "GRAB") == 0) {
       //std::cout << "You grabbed an item" << std::endl;
-      vecI->push_back(new Item());
+      //ivecI->push_back(new Item());
       std::cout << "Enter the item's name" << std::endl;
-      std::cin.getline(vecI->at(vecI->size()-1)->name, 80);
+      //std::cin.getline(vecI->at(vecI->size()-1)->name, 80);
+      cin.getline(tempName, 80);
+      std::cout << "Enter the item's location" << std::endl;
+      cin >> tempLocation;
+      cin.clear();
+      cin.ignore(999, '\n');
+      ivecI->push_back(new Item(tempName, tempLocation));
     }
     else if (strcmp(moveInput, "DROP") == 0) {
       std::cout << "What item do you want to drop?" << std::endl;
       cin.getline(dropInput, 80);
-      for (j = vecI->begin(); j != vecI->end(); ++j) {
-        if (strcmp((*j)->name, dropInput) == 0) {
+      for (j = ivecI->begin(); j != ivecI->end(); ++j) {
+        if (strcmp((*j)->getName(), dropInput) == 0) {
           std::cout << "You dropped" << dropInput << "in the room" << std::endl;
-          (*j)->location = currentLocation;
+	  (*j)->location = currentLocation;
         }
       }
     }

@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cstring>
+
+class Item
+{
+ public:
+  Item(char*, int);
+  char* getName();
+  int getLocation();
+ private:
+  char* name;
+  int location;
+};
