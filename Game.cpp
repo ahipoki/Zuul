@@ -49,4 +49,10 @@ int main()
 
   Room* currentRoom;
   Room** currentRoomptr = &currentRoom;
+  Room* lastRoom = ((*room)[(char*)"Last Room"]);
+  
+  char commandsarray[80];
+  char* commandstr = commandsarray;
+  char keywordsarray[80];
+  char* keywordstr = keywordsarray;
 }
