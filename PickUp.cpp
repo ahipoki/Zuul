@@ -37,7 +37,17 @@ void PickUp::take(Room** currentRoomptr, vector<Item*>* bag, char* itemName)
     {
       bag->push_back(new Item(inQ));
       delete (*roomIt);
-      roomIt = ((*currentRoomptr)->getItem())->erase(roomIt
+      roomIt = ((*currentRoomptr)->getItem())->erase(roomIt);
+      std::cout << "Received " << inQ << "!" << std::endl;
+      found = true;
     }
+    else
+    {
+      ++roomIt;
+    }
+  }
+  if (found == false)
+  {
+    std::cout << "That isn't an item here" << std::endl;
   }
 }
