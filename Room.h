@@ -1,13 +1,28 @@
+#ifndef ROOM_H
+#define ROOM_H
+
 #include <iostream>
 #include <cstring>
+#include <vector>
+#include <map>
+#include "Item.h"
 
 class Room
 {
  public:
-  Room(char*, char*);
+  Room(char*, char*, vector<Item*>*, map<char*, char*>*);
+  char getTitle();
   char* getDescription();
-  char* getItem();
+  vector<Item*>* getItem();
+  map<char*, char*>* getExit();
+  Room* getExitRoom();
+  void setExit(char*, char*);
+  void addItem(char*);
  private:
+  char* title;
   char* description;
-  char* item;
+  vector<Item*>* item;
+  map<char*, char*>* exit;
 };
+
+#endif
