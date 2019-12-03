@@ -2,7 +2,7 @@
 #include <cstring>
 #include <vector>
 #include <map>
-#include "Story.h"
+#include "Plot.h"
 #include "Room.h"
 
 Story::Story(char* newDescription) : Command(newDescription)
