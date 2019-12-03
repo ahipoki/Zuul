@@ -1,21 +1,50 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
+#include <iterator>
+#include <map>
+#include "Item.h"
 #include "Room.h"
 
-Room::Room(char* newDescription, char* newItem)
+Room::Room(char* newTitle, char* newDescription, vector<Item*>* newItem, map<char*, char*>* newExit)
 {
-  description = new char[strlen(newDescription)+1];
-  strcpy(description, newDescription);
-  item = new char[strlen(newItem)+1];
-  strcpy(item, newItem);
+  title = newTitle;
+  description = newDescription;
+  item = newItem;
+  exit = newExit;
 }
 
-char* Room::getDescription()
+char* Room::getTitle()
+{
+  return title;
+}
+
+char* Room::getDescription() 
 {
   return description;
 }
 
-char* Room::getItem()
+vector<Item*>* Room::getItem()
 {
   return item;
+}
+
+map<char*, char*>* Room::getExit()
+{
+  return exit;
+}
+
+Room* Room::getExitRoom()
+{
+  //Hashmap Direction
+}
+
+void Room::setExit(char* direction, char* destination)
+{
+  (*exit)[direction] = destination;
+}
+
+void Room::addItem(char* itemName)
+{
+  item->push_back(new Item(itemName));
 }
