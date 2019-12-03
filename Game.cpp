@@ -176,13 +176,124 @@ void processInput(char* commandstr, char* keywordstr)
 
 void processCommand(char* commandstr, char* keywordstr, vector<Command*>* commandsptr, map<char*, Room*>* room, Room** currentRoomptr, vector<Item*>* bagptr, vector<Command*>* commands, vector<char*>* enRoomsptr)
 {
-  
+  vector<Command*>::iterator commandIt;
+  bool found = false;
+  for (commandIt = commandsptr->begin(); commandIt != commandsptr->end(); ++commandIt)
+  {
+    if (strcmp((*commandIt)->getDescription(), commandstr) == 0)
+    {
+      found = true;
+      break;
+    }
+  }
+  if (found == false)
+  {
+    std::cout << "That's an invalid command" << std::endl;
+  }
+  else
+  {
+    int type = (*commandIt)->getType();
+    switch (type)
+    {
+    case HEAD_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+	((Head*)(*commandIt))->move(keywordstr, room, currentRoomptr);
+      }
+      else
+      {
+	std::cout << ((Head*)(*commandIt))->returnBurn() << std::endl;
+      }
+      break;
+    case HELP_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+	((Help*)(commandIt))->help(keywordstr, room, currentRoomptr);
+      }
+      else
+      {
+	std::cout "Else" << std::endl;
+      }
+      break;
+    case PICKUP_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+
+      }
+      else
+      {
+
+      }
+      break;
+    case DROP_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+
+      }
+      else
+      {
+	
+      }
+      break;
+    case INVENTORY_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+	
+      }
+      else
+      {
+
+      }
+      break;
+    case TALK_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+
+      }
+      else
+      {
+
+      }
+      break;
+    case STORY_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+
+      }
+      else
+      {
+
+      }
+      break;
+    case QUIT_TYPE:
+      if (strcmp(keywordstr, "") != 0)
+      {
+
+      }
+      else
+      {
+
+      }
+      break;
+    }
+  }
 }
 
+void printItem(vector<Item*>* item)
+{
+  vector<Item*>::iterator itemIt;
+  for (itemIt = item->begin(); itemIt != item->end(); ++itemIt)
+  {
+    std::cout << (*itemIt)->getName() << " ";
+  }
+  std::cout << std::endl;
+}
 
-
-
-
-
-
-
+void printRoom(Room* currentRoom)
+{
+  std::cout << "Current Room: " << currentRoom << std::endl;
+  std::cout << "Exits: ";
+  printExit(currentRoom->getExit());
+  std::cout << "Items: ";
+  printItem(currentRoom->getItem());
+}
