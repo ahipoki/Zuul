@@ -12,4 +12,4 @@ class Inventory : public Command
     char* returnBurn(char*);
     void show(vector<Item*>*);
   private:
-}
+};

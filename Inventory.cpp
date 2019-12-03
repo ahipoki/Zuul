@@ -5,6 +5,11 @@
 #include "Inventory.h"
 #include "Item.h"
 
+/*
+ *Method to check your inventory
+ *.cpp file
+ */
+
 Inventory::Inventory(char* newDescription) : Command(newDescription)
 {
 

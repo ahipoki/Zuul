@@ -13,4 +13,4 @@ class PickUp : public Command
     char* returnBurn();
     void take(Room**, vector<Item*>*, char*);
   private:
-}
+};

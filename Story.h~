@@ -1,15 +1,15 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 #include <map>
 #include "Command.h"
 #include "Room.h"
 
-class Head : public Command
+class Plot : public Command
 {
   public:
-    Head(char*);
+    Plot(char*);
     int getType();
     char* returnBurn();
-    void Move(char*, map<char*, Room*>*, Room**);
-  private:
+    void printMap(Room**, map<char*, Room*>*, vector<char*>*);
 };

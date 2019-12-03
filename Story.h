@@ -5,11 +5,11 @@
 #include "Command.h"
 #include "Room.h"
 
-class Plot : public Command
+class Story : public Command
 {
   public:
-    Plot(char*);
+    Story(char*);
     int getType();
     char* returnBurn();
     void printMap(Room**, map<char*, Room*>*, vector<char*>*);
-}
+};

@@ -11,4 +11,4 @@ class Help : public Command
     char* returnBurn();
     void printHelp(vector<Command*>*);
   private:
-}
+};
