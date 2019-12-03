@@ -4,11 +4,8 @@
 class Item
 {
  public:
-  Item(char*, int);
+  Item(char*);
   char* getName();
-  int getLocation();
   char* name;
-  int location;
  private:
-  //int location;
 };
