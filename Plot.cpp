@@ -5,22 +5,22 @@
 #include "Plot.h"
 #include "Room.h"
 
-Story::Story(char* newDescription) : Command(newDescription)
+Plot::Plot(char* newDescription) : Command(newDescription)
 {
   
 }
 
-int Story::getType()
+int Plot::getType()
 {
   return 8;
 }
 
-char* Story::returnBurn()
+char* Plot::returnBurn()
 {
   return (char*) "This is a story";
 }
 
-void Story::printMap(Room** currentRoomptr, map<char*, Room*>* room, vector<char*>* eRooms)
+void Plot::printMap(Room** currentRoomptr, map<char*, Room*>* room, vector<char*>* eRooms)
 {
   vector<char*>::iterator eIt;
   int counter = 0;
