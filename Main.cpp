@@ -20,7 +20,7 @@ int main() {
   int currentLocation;
   vector<Item*>::iterator j;
   bool win = false;
-  std::cout << "Your commands are NORTH, WEST, SOUTH, EAST, HELP, QUIT, INVENTORY, or GRAB" << std::endl;
+  std::cout << "Your commands are NORTH, WEST, SOUTH, EAST, HELP, INVENTORY, or GRAB" << std::endl;
   while (win == false) {
     std::cout << "Do you want to move NORTH, WEST, SOUTH, or EAST?" << std::endl;
     std::cin.getline(moveInput, 80);
