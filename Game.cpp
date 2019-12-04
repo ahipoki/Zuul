@@ -218,11 +218,11 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
     case PICKUP_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-
+	((PickUp*)(*commandIt))->take(currentRoomptr, bagptr, keywordstr);
       }
       else
       {
-
+	std::cout << ((PickUp*)(*commandIt))->returnBurn() << std::endl;
       }
       break;
     case DROP_TYPE:
