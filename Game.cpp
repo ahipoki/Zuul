@@ -80,7 +80,7 @@ int main()
     bool found = false;
     for (i = enRoom.begin(); i != enRoom.end(); ++i)
     {
-      if (strcmp((*i), currentRoom->getTitle()) == 0)
+      if (strcmp((*i)->getTitle(), currentRoom->getTitle()) == 0)
       {
         found = true;
       }
