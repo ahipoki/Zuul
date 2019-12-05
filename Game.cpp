@@ -13,6 +13,7 @@
 #include "Talk.h"
 #include "Help.h"
 #include "Story.h"
+#include "Quit.h"
 
 #define HELP_TYPE 2
 #define HEAD_TYPE 3
