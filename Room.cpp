@@ -36,7 +36,12 @@ map<char*, char*>* Room::getExit()
 
 Room* Room::getExitRoom()
 {
-  //Hashmap Direction
+  //Hashmap Directions
+}
+
+void Room::setDescription(char* newDescription)
+{
+  description = newDescription;
 }
 
 void Room::setExit(char* direction, char* destination)
