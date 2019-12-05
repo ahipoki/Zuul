@@ -208,11 +208,11 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
     case HELP_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-	((Help*)(commandIt))->help(keywordstr, room, currentRoomptr);
+	((Help*)(commandIt))->printHelp(commands);
       }
       else
       {
-	std::cout "Else" << std::endl;
+	std::cout << ((Help*)(*commandIt))->returnBurn() << std::endl;
       }
       break;
     case PICKUP_TYPE:
@@ -228,51 +228,51 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
     case DROP_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-
+	((*Drop)(*commandIt))->drop(currentRoomptr, bagptr, keywordstr);
       }
       else
       {
-	
+	std::cout << ((Drop*)(*commandIt))->returnBurn() << std::endl;
       }
       break;
     case INVENTORY_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-	
+	((Inventory*)(*commandIt))->show(bagptr);
       }
       else
       {
-
+	std::cout << "That's the wrong command" << std::endl;
       }
       break;
     case TALK_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-
+	((Talk*)(*commandIt))->act(room, currentRoomptr, bagptr);
       }
       else
       {
-
+	std::cout << ((Talk*)(*commandIt))->returnBurn();
       }
       break;
     case STORY_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-
+	((Story*)(*commandIt))->printMap(currentRoomptr, room, enRoomptr);
       }
       else
       {
-
+	std::cout << ((Story*)(*commandIt))->returnBurn() << std::endl;
       }
       break;
     case QUIT_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-
+	((Quit*)(*commandIt))->quit();
       }
       else
       {
-
+	std::cout << ((Quit*)(*commandIt))->returnBurn() << std::endl;
       }
       break;
     }
