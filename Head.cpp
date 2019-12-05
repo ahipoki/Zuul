@@ -1,4 +1,4 @@
-#inlcude <iostream>
+#include <iostream>
 #include <cstring>
 #include <map>
 #include <iterator>
@@ -20,16 +20,16 @@ char* Head::returnBurn()
   return (char*) "You move a direction. (Input your move)";
 }
 
-void Head::Move(char* key, map<char*, Room*>* room, Room **currentRoomptr)
+void Head::move(char* key, map<char*, Room*>* rm, Room **currentRoomptr)
 {
-  map<char*, char*>::iterator exIt;
+  std::map<char*, char*>::iterator exitIt;
   map<char*, char*>* exit = (*currentRoomptr)->getExit();
   bool found = false;
-  for (exIt = exit->begin(); exIt != exit->end(); ++exIt)
+  for (exitIt = exit->begin(); exitIt != exit->end(); ++exitIt)
   {
-    if (strcmp(exIt->first, key) == 0)
+    if (strcmp(exitIt->first, key) == 0)
     {
-      (*currentRoomptr) = ((*room)[exIt->second]);
+      (*currentRoomptr) = ((*rm)[exitIt->second]);
       found = true;
     }
   }

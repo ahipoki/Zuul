@@ -26,7 +26,7 @@ int Talk::getEv()
   return ev;
 }
 
-void Talk::act(map<char*, Room*>* room, Room** currentRoom, vector<Item*>* bag)
+void Talk::act(std::map<char*, Room*>* room, Room** currentRoom, std::vector<Item*>* bag)
 {
   char scrollText[80] = "";
   if (strcmp((*currentRoom)->getTitle(), "Test") == 0)
@@ -34,9 +34,9 @@ void Talk::act(map<char*, Room*>* room, Room** currentRoom, vector<Item*>* bag)
     if (ev[0] == false)
     {
       std::cout << "Testing" << std::endl;
-      cin.getline(scrollText, 80);
-      cin.clear();
-      cin.ignore(999, '\n');
+      std::cin.getline(scrollText, 80);
+      std::cin.clear();
+      std::cin.ignore(999, '\n');
       std::cout << "Done testing" << std::endl;
       ev[0] = true;
     }
@@ -50,13 +50,13 @@ void Talk::act(map<char*, Room*>* room, Room** currentRoom, vector<Item*>* bag)
     if (ev[1] == false)
     {
       std::cout << "This is the second room" << std::endl;
-      cin.getline(scrollText, 80);
-      cin.clear();
-      cin.ignore(999, '\n');
+      std::cin.getline(scrollText, 80);
+      std::cin.clear();
+      std::cin.ignore(999, '\n');
       std::cout << "Testing again" << std::endl;
-      cin.getline(scrollText, 80);
-      cin.clear();
-      cin.ignore(999, '\n');
+      std::cin.getline(scrollText, 80);
+      std::cin.clear();
+      std::cin.ignore(999, '\n');
       ev[1] = true;
     }
     else

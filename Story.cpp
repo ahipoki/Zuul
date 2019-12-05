@@ -20,9 +20,9 @@ char* Story::returnBurn()
   return (char*) "This is a story";
 }
 
-void Story::printMap(Room** currentRoomptr, map<char*, Room*>* room, vector<char*>* eRooms)
+void Story::printMap(Room** currentRoomptr, map<char*, Room*>* room, std::vector<char*>* eRooms)
 {
-  vector<char*>::iterator eIt;
+  std::vector<char*>::iterator eIt;
   int counter = 0;
   for (roomIt = room->begin(); roomIt != room->end(); ++roomIt)
   {

@@ -6,7 +6,7 @@
 #include "Item.h"
 #include "Room.h"
 
-Room::Room(char* newTitle, char* newDescription, vector<Item*>* newItem, map<char*, char*>* newExit)
+Room::Room(char* newTitle, char* newDescription, std::vector<Item*>* newItem, map<char*, char*>* newExit)
 {
   title = newTitle;
   description = newDescription;

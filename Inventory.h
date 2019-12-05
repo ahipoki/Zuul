@@ -10,6 +10,6 @@ class Inventory : public Command
     Inventory(char*);
     int getType();
     char* returnBurn(char*);
-    void show(vector<Item*>*);
+    void show(std::vector<Item*>*);
   private:
 };

@@ -13,7 +13,7 @@ class Talk : public Command
   int getType();
   char* returnBurn();
   int* getEv();
-  void act(map<char*, Room*>*, Room**, vector<Item*>*);
+  void act(std::map<char*, Room*>*, Room**, std::vector<Item*>*);
  private:
   int* ev;
 };

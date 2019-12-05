@@ -4,7 +4,7 @@
 #include <iterator>
 #include <map>
 #include "Item.h"
-#inlcude "Room.h"
+#include "Room.h"
 #include "Command.h"
 #include "Head.h"
 #include "Drop.h"
@@ -24,33 +24,33 @@
 #define STORY_TYPE 8
 #define QUIT_TYPE 9
 
-void createRoom(map<char*, Room*>*, char*, char*);
+void createRoom(std::map<char*, Room*>*, char*, char*);
 void processInput(char*, char*);
-void processCommand(char*, char*, vector<Commmand*>*, map<char*, Room*>*, Room**, vector<Item*>*, vector<Command*>*, vector<char*>*);
-void printExit(map<char*>, char*>*);
-void printItem(vector<Item*>*);
+void processCommand(char*, char*, std::vector<Command*>*, std::map<char*, Room*>*, Room**, std::vector<Item*>*, std::vector<Command*>*, std::vector<char*>*);
+void printExit(std::map<char*, char*>*);
+void printItem(std::vector<Item*>*);
 void printRoom(Room*);
 
 int main()
 {
-  vector<char*> enRoom;
-  vector<char*>* enRoomptr = &enRoom;
-  map<char*, Room*>* room = new map<char*, Room*>;
-  createRoom(Room, (char*) "Test", (char*) "Description");
+  std::vector<char*> enRoom;
+  std::vector<char*>* enRoomptr = &enRoom;
+  std::map<char*, Room*>* rm = new std::map<char*, Room*>;
+  createRoom(rm, (char*) "Test", (char*) "Description");
 
-  ((*Room)[(char*)"Test"])->setExit((char*)"WEST", (char*)"2nd Room");
+  ((*rm)[(char*)"Test"])->setExit((char*)"WEST", (char*)"2nd Room");
 
-  ((*Room)[(char*)"Test"])->addItem((char*)"Item");
+  ((*rm)[(char*)"Test"])->addItem((char*)"Item");
 
-  vector<Item*> bag;
-  vector<Item*>* bagptr = &bag;
+  std::vector<Item*> bag;
+  std::vector<Item*>* bagptr = &bag;
 
-  vector<Command*> commands;
-  vector<Command*>* commandsptr = &commands;
+  std::vector<Command*> commands;
+  std::vector<Command*>* commandsptr = &commands;
 
   Room* currentRoom;
   Room** currentRoomptr = &currentRoom;
-  Room* lastRoom = ((*room)[(char*)"Last Room"]);
+  Room* lastRoom = ((*rm)[(char*)"Last Room"]);
   
   char commandsarray[80];
   char* commandstr = commandsarray;
@@ -71,14 +71,14 @@ int main()
   commandsptr->push_back(new Quit((char*)"quit"));
   
   bool running = true;
-  currentRoom = ((*room)[(char*)"Test"]);
+  currentRoom = ((*rm)[(char*)"Test"]);
   std::cout << "This is a zuul game and a placeholder" << std::endl;
   printRoom(currentRoom);
   while (running == true)
   {
-    vector<char*>::iterator i;
+    std::vector<char*>::iterator i;
     bool found = false;
-    for (i = enRooms.begin(); i != enRooms.end(); ++i)
+    for (i = enRoom.begin(); i != enRoom.end(); ++i)
     {
       if (strcmp((*i), currentRoom->getTitle()) == 0)
       {
@@ -87,7 +87,7 @@ int main()
     }
     if (found == false)
     {
-      enRooms.push_back(currentRoom->getTitle());
+      enRoom.push_back(currentRoom->getTitle());
     }
     if (lastRoom != currentRoom)
     {
@@ -95,16 +95,16 @@ int main()
       lastRoom = currentRoom;
     }
     processInput(commandsptr, keywordstr);
-    processCommand(commandstr, keywordstr, commandsptr, room, currentRoomptr, bagptr, commandsptr, enRoomsptr);
+    processCommand(commandstr, keywordstr, commandsptr, rm, currentRoomptr, bagptr, commandsptr, enRoomptr);
     
     int* ev = ((Talk*)(commands.at(5)))->getEv();
-    if (currentRoom == (*room)[(char*)"Test"])
+    if (currentRoom == (*rm)[(char*)"Test"])
     {
       if (ev[0] == true)
       {
-        ((*room)[(char*)"Test"])->setDescription((char*)"Testing");
-        ((*room)[(char*)"Test"])->setExit((char*)"EAST", (char*)"2nd Room");
-        ((*room)[(char*)])->addItem((char*)"Item");
+        ((*rm)[(char*)"Test"])->setDescription((char*)"Testing");
+        ((*rm)[(char*)"Test"])->setExit((char*)"EAST", (char*)"2nd Room");
+        ((*rm)[(char*)])->addItem((char*)"Item");
         ev[0] = 2;
         printRoom(currentRoom);
       }
@@ -112,9 +112,9 @@ int main()
   }
 }
 
-void createRoom (map<char*, Room*>* room, char* roomTitle, char* roomDescription)
+void createRoom (std::map<char*, Room*>* room, char* roomTitle, char* roomDescription)
 {
-  (*room)[roomTitle] = new Room(roomTitle, roomDescription, new vector<Item*>, new map<char*, char*>);
+  (*rm)[roomTitle] = new Room(roomTitle, roomDescription, new std::vector<Item*>, new std::map<char*, char*>);
 }
 
 void processInput(char* commandstr, char* keywordstr)
@@ -123,9 +123,9 @@ void processInput(char* commandstr, char* keywordstr)
   while (true)
   {
     int spaces = 0;
-    cin.getline(input, 80);
-    cin.clear();
-    cin.ignore(999, '\n');
+    std::cin.getline(input, 80);
+    std::cin.clear();
+    std::cin.ignore(999, '\n');
     if (strlen(input) != 0)
     {
       for (int i = 0; i < strlen(input); ++i)
@@ -153,9 +153,9 @@ void processInput(char* commandstr, char* keywordstr)
             break;
           }
         }
-        if (index != 0 && index != stlen(input)-1)
+        if (index != 0 && index != strlen(input)-1)
         {
-          char first[index+1] == "";
+          char first[index+1] = "";
           char second[(strlen(input)-index)] = "";
           for (int i = 0; i < index; ++i)
           {
@@ -163,7 +163,7 @@ void processInput(char* commandstr, char* keywordstr)
           }
           for (int i = index + 1; i < strlen(input); ++i)
           {
-            second[a-index-1] = input[i];
+            second[i-index-1] = input[i];
           }
           strcpy(commandstr, first);
           strcpy(keywordstr, second);
@@ -175,9 +175,9 @@ void processInput(char* commandstr, char* keywordstr)
   }
 }
 
-void processCommand(char* commandstr, char* keywordstr, vector<Command*>* commandsptr, map<char*, Room*>* room, Room** currentRoomptr, vector<Item*>* bagptr, vector<Command*>* commands, vector<char*>* enRoomsptr)
+void processCommand(char* commandstr, char* keywordstr, std::vector<Command*>* commandsptr, std::map<char*, Room*>* rm, Room** currentRoomptr, std::vector<Item*>* bagptr, std::vector<Command*>* commands, std::vector<char*>* enRoomptr)
 {
-  vector<Command*>::iterator commandIt;
+  std::vector<Command*>::iterator commandIt;
   bool found = false;
   for (commandIt = commandsptr->begin(); commandIt != commandsptr->end(); ++commandIt)
   {
@@ -199,7 +199,7 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
     case HEAD_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-	((Head*)(*commandIt))->move(keywordstr, room, currentRoomptr);
+	((Head*)(*commandIt))->move(keywordstr, rm, currentRoomptr);
       }
       else
       {
@@ -209,7 +209,7 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
     case HELP_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-	((Help*)(commandIt))->printHelp(commands);
+	((Help*)(*commandIt))->printHelp(commands);
       }
       else
       {
@@ -249,7 +249,7 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
     case TALK_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-	((Talk*)(*commandIt))->act(room, currentRoomptr, bagptr);
+	((Talk*)(*commandIt))->act(rm, currentRoomptr, bagptr);
       }
       else
       {
@@ -259,7 +259,7 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
     case STORY_TYPE:
       if (strcmp(keywordstr, "") != 0)
       {
-	((Story*)(*commandIt))->printMap(currentRoomptr, room, enRoomptr);
+	((Story*)(*commandIt))->printMap(currentRoomptr, rm, enRoomptr);
       }
       else
       {
@@ -280,9 +280,9 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
   }
 }
 
-void printItem(vector<Item*>* item)
+void printItem(std::vector<Item*>* item)
 {
-  vector<Item*>::iterator itemIt;
+  std::vector<Item*>::iterator itemIt;
   for (itemIt = item->begin(); itemIt != item->end(); ++itemIt)
   {
     std::cout << (*itemIt)->getName() << " ";
@@ -294,7 +294,7 @@ void printRoom(Room* currentRoom)
 {
   std::cout << "Current Room: " << currentRoom << std::endl;
   std::cout << "Exits: ";
-  printExit(currentRoom->getExit());
+  printExit(currentRoom)->getExit();
   std::cout << "Items: ";
   printItem(currentRoom->getItem());
 }

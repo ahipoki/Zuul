@@ -10,4 +10,4 @@ class Quit : public Command
     char* returnBurn();
     void quit();
   private:
-}
+};

@@ -27,7 +27,7 @@ char* Inventory::returnBurn(char* key)
 
 void Inventory::show(vector<Item*>* bag)
 {
-  vector<Item*>::iterator bagIt;
+  std::vector<Item*>::iterator bagIt;
   if (bag->begin() != bag->end())
   {
     for (bagIt = bag->begin(); bagIt != bag->end(); ++bagIt)

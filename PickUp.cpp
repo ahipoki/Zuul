@@ -2,7 +2,7 @@
 #include <cstring>
 #include <vector>
 #include <iterator>
-#include <"PickUp.h"
+#include "PickUp.h"
 #include "Item.h"
 #include "Room.h"
 
@@ -21,10 +21,10 @@ char* PickUp::returnBurn()
   return (char*) "There were no items to grab";
 }
 
-void PickUp::take(Room** currentRoomptr, vector<Item*>* bag, char* itemName)
+void PickUp::take(Room** currentRoomptr, std::vector<Item*>* bag, char* itemName)
 {
   bool found = false;
-  vector<Item*>::iterator roomIt;
+  std::vector<Item*>::iterator roomIt;
   for (roomIt = ((*currentRoomptr)->getItem())->begin(); roomIt != ((*currentRoomptr)->getItem())->end(); )
   {
     char* inQ = (*roomIt)->getName();

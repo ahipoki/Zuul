@@ -10,19 +10,19 @@
 class Room
 {
  public:
-  Room(char*, char*, vector<Item*>*, map<char*, char*>*);
+  Room(char*, char*, std::vector<Item*>*, std::map<char*, char*>*);
   char getTitle();
   char* getDescription();
-  vector<Item*>* getItem();
-  map<char*, char*>* getExit();
+  std::vector<Item*>* getItem();
+  std::map<char*, char*>* getExit();
   Room* getExitRoom();
   void setExit(char*, char*);
   void addItem(char*);
  private:
   char* title;
   char* description;
-  vector<Item*>* item;
-  map<char*, char*>* exit;
+  std::vector<Item*>* item;
+  std::map<char*, char*>* exit;
 };
 
 #endif

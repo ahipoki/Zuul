@@ -11,6 +11,6 @@ class Drop : public Command
   Drop(char*);
   int getType();
   char* returnBurn();
-  void drop(Room**, vector<Item*>*, char*);
+  void drop(Room**, std::vector<Item*>*, char*);
  private:
 };

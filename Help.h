@@ -9,6 +9,6 @@ class Help : public Command
     Help(char*);
     int getType();
     char* returnBurn();
-    void printHelp(vector<Command*>*);
+    void printHelp(std::vector<Command*>*);
   private:
 };

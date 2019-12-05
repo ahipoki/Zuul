@@ -11,6 +11,6 @@ class PickUp : public Command
     PickUp(char*);
     int getType();
     char* returnBurn();
-    void take(Room**, vector<Item*>*, char*);
+    void take(Room**, std::vector<Item*>*, char*);
   private:
 };

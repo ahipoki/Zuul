@@ -11,5 +11,5 @@ class Story : public Command
     Story(char*);
     int getType();
     char* returnBurn();
-    void printMap(Room**, map<char*, Room*>*, vector<char*>*);
+    void printMap(Room**, std::map<char*, Room*>*, std::vector<char*>*);
 };

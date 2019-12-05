@@ -10,6 +10,7 @@ class Head : public Command
     Head(char*);
     int getType();
     char* returnBurn();
-    void Move(char*, map<char*, Room*>*, Room**);
+    void move(char*, std::map<char*, Room*>*, Room**);
+    char* room;
   private:
 };
