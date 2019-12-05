@@ -16,6 +16,7 @@ class Room
   std::vector<Item*>* getItem();
   std::map<char*, char*>* getExit();
   Room* getExitRoom();
+  void setDescription(char*);
   void setExit(char*, char*);
   void addItem(char*);
  private:
