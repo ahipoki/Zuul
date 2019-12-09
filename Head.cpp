@@ -5,7 +5,7 @@
 #include "Head.h"
 #include "Room.h"
 
-Head::Head(char* newDesc) : Command(newDesc) {
+Head::Head(char* newDescription) : Command(newDescription) {
   
 }
 
