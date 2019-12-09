@@ -7,23 +7,23 @@
 #include <map>
 #include "Item.h"
 
-class Room
-{
+using namespace std;
+
+class Room{
  public:
-  Room(char*, char*, std::vector<Item*>*, std::map<char*, char*>*);
-  char getTitle();
-  char* getDescription();
-  std::vector<Item*>* getItem();
-  std::map<char*, char*>* getExit();
+  Room(char*, char*, vector<Item*>*, map<char*, char*>*);
+  char* getTitle();
+  char* getDesc();
+  vector<Item*>* getItems();
+  map<char*, char*>* getExits();
   Room* getExitRoom();
-  void setDescription(char*);
+  void setDesc(char*);
   void setExit(char*, char*);
   void addItem(char*);
  private:
   char* title;
-  char* description;
-  std::vector<Item*>* item;
-  std::map<char*, char*>* exit;
+  char* desc;
+  vector<Item*>* items;
+  map<char*, char*>* exits;
 };
-
 #endif
