@@ -1,3 +1,4 @@
+//Toss is like any other command except the currentRoom, player inventory, and specified item drops are needed
 #include <iostream>
 #include <cstring>
 #include <vector>
@@ -5,12 +6,12 @@
 #include "Item.h"
 #include "Room.h"
 
-class Drop : public Command
-{
+class Toss : public Command {
  public:
-  Drop(char*);
+  Toss(char*);
   int getType();
   char* returnBurn();
-  void drop(Room**, std::vector<Item*>*, char*);
+  void drop(Room**, vector<Item*>*, char*);
  private:
+
 };
