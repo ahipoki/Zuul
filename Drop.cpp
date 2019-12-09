@@ -2,24 +2,24 @@
 #include <cstring>
 #include <vector>
 #include <iterator>
-#include "Toss.h"
+#include "Drop.h"
 #include "Item.h"
 #include "Room.h"
 
-Toss::Toss(char* newDesc) : Command(newDesc){
+Drop::Drop(char* newDescription) : Command(newDescription){
 
 }
 
-int Toss::getType(){
+int Drop::getType(){
   return 5;
 }
 
-char* Toss::returnBurn(){
+char* Drop::returnBurn(){
   return (char*) "You didn't toss anything! #TeamTrees!";
 }
 
 //Loop through current inventory items. If the name matches the Item name, create NEW item with desc in room item list, then DELETE the item from inventory.
-void Toss::drop(Room** currentRoomptr, vector<Item*>* bag, char* itemName){
+void Drop::toss(Room** currentRoomptr, vector<Item*>* bag, char* itemName){
   bool found = false;
   vector<Item*>::iterator inIt;
   for(inIt = bag->begin(); inIt != bag->end(); ){
