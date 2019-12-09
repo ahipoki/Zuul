@@ -4,15 +4,17 @@
 #include <iostream>
 #include <cstring>
 
+using namespace std;
+
 class Command
 {
-  public:
-    Command(char*);
-    char* getDescription();
-    virtual int getType();
-    virtual char* returnBurn();
-  private:
-    char* description;
+ public:
+  //A command just needs a description
+  Command(char*);
+  char* getDesc();
+  virtual int getType();
+  virtual char* returnBurn();
+ private:
+  char* desc;
 };
-
 #endif
