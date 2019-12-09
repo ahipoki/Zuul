@@ -2,52 +2,45 @@
 #include <cstring>
 #include <vector>
 #include <map>
-#include "Story.h"
+#include "Plot.h"
 #include "Room.h"
 
-Story::Story(char* newDescription) : Command(newDescription)
-{
+Plot::Plot(char* newDesc) : Command(newDesc) {
   
 }
 
-int Story::getType()
-{
+int Plot::getType(){
   return 8;
 }
 
-char* Story::returnBurn()
-{
-  return (char*) "This is a story";
+char* Plot::returnBurn(){
+  return (char*) "This ain't no treasure map!";
 }
 
-void Story::printMap(Room** currentRoomptr, map<char*, Room*>* room, std::vector<char*>* eRooms)
-{
-  std::vector<char*>::iterator eIt;
+void Plot::printMap(Room** currentRoomptr, map<char*,Room*>* rm, vector<char*>* encRooms){
+  vector<char*>::iterator enIt;
+  map<char*,Room*>::iterator rmIt;
+
   int counter = 0;
-  for (roomIt = room->begin(); roomIt != room->end(); ++roomIt)
-  {
+  for(rmIt = rm->begin(); rmIt != rm->end(); ++rmIt){
     bool match = false;
-    if (counter == 5 || counter == 10 || counter == 15)
-    {
-      std::cout << std::endl;
+    if(counter == 5 || counter == 10 || counter == 15){
+	cout << endl;
     }
-    for (eIt = eRooms->begin(); eIt != eRooms->end(); ++eIt)
-    {
-      if (strcmp(roomIt->first, (*eIt)) == 0)
-      {
-        std::cout << roomIt->first();
-        if (strcmp(roomIt->first, (*currentRoomptr)->getTitle()) == 0)
-        {
-          std::cout << "(You)";
-        }
-        std::cout << "|";
-        match = true;
+    for(enIt = encRooms->begin(); enIt != encRooms->end(); ++enIt){
+      if(strcmp(rmIt->first, (*enIt)) == 0){
+	  cout << rmIt->first;
+	  if(strcmp(rmIt->first, (*currentRoomptr)->getTitle()) == 0){
+	    cout << "(YOU)";
+	  }
+	  cout << "|";
+	  match = true;
       }
     }
-    if (match == false)
-    {
-      std::cout << "***";
+    if(match == false){
+      cout << "***************|";
     }
     ++counter;
   }
+ 
 }
