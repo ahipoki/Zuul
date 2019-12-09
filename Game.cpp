@@ -1,11 +1,3 @@
-/*
-
-  Author: Andy Li
-  Date: 12/2/19
-  Zuul: A text-based game that allows the player to move between rooms and pickup and drop items. I also added custom events and win conditions to mine!
-  Comments to command-types other than head, toss, and sack will be on main
-
-*/
 #include <iostream>
 #include <cstring>
 #include <vector>
@@ -18,26 +10,26 @@
 //A command just needs a description, type, and something to return when the user types the command incorrectly
 #include "Command.h"
 #include "Head.h"
-#include "Grab.h"
-#include "Toss.h"
+#include "PickUp.h"
+#include "Drop.h"
 //This command simply iterates through the players inventory of item vectors and displays their names.
-#include "Sack.h"
+#include "Inventory.h"
 //This command is a major class that stores in an event array, which keeps tracks of which events have happened in what rooms. It also contains much of the standard talk reply of rooms.
 #include "Talk.h"
 //Prints list of commands
 #include "Help.h"
 //Prints a map that dynamically updates
-#include "Plot.h"
+#include "Story.h"
 //Exits the program
 #include "Quit.h"
 
 #define HELP_TYPE 2
 #define HEAD_TYPE 3
-#define GRAB_TYPE 4
-#define TOSS_TYPE 5
-#define SACK_TYPE 6
+#define PICKUP_TYPE 4
+#define DROP_TYPE 5
+#define INVENTORY_TYPE 6
 #define TALK_TYPE 7
-#define PLOT_TYPE 8
+#define STORY_TYPE 8
 #define QUIT_TYPE 9
 
 using namespace std;
