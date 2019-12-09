@@ -11,10 +11,10 @@ class Command
  public:
   //A command just needs a description
   Command(char*);
-  char* getDesc();
+  char* getDescription();
   virtual int getType();
   virtual char* returnBurn();
  private:
-  char* desc;
+  char* description;
 };
 #endif
