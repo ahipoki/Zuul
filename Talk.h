@@ -6,14 +6,13 @@
 #include "Item.h"
 #include "Room.h"
 
-class Talk : public Command
-{
+class Talk : public Command {
  public:
   Talk(char*, int*);
   int getType();
   char* returnBurn();
   int* getEv();
-  void act(std::map<char*, Room*>*, Room**, std::vector<Item*>*);
+  void act(map<char*, Room*>*, Room**, vector<Item*>*);
  private:
   int* ev;
 };
