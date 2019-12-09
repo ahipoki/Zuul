@@ -4,28 +4,23 @@
 #include <iterator>
 #include "Help.h"
 
-Help::Help(char* newDescription) : Command(newDescription)
-{
+Help::Help(char* newDesc) : Command (newDesc) {
   
 }
 
-int Help::getType()
-{
+int Help::getType(){
   return 2;
 }
 
-char* Help::returnBurn()
-{
-  return (char*) "Type \"Help\" to get help";
+char* Help::returnBurn(){
+  return (char*) "Just type \"Help\" lol";
 }
 
-void Help::printHelp(vector<Command*>* commands)
-{
-  vector<Command*>::iterator coIt;
-  std::cout << "Your commands are: ";
-  for (coIt = commands->begin(); coIt != commands->end(); ++coIt)
-  {
-    std::cout << (*coIt)->getDescription() << " ";
+void Help::printHelp(vector<Command*>* commands){
+  vector<Command*>::iterator comIt;
+  cout << "Your commands are: ";
+  for(comIt = commands->begin(); comIt != commands->end(); ++comIt){
+    cout << (*comIt)->getDesc() << " ";
   }
-  std::cout << std::endl;
+  cout << endl;
 }
