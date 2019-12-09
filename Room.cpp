@@ -6,50 +6,43 @@
 #include "Item.h"
 #include "Room.h"
 
-Room::Room(char* newTitle, char* newDescription, std::vector<Item*>* newItem, map<char*, char*>* newExit)
-{
+Room::Room(char* newTitle, char* newDesc, vector<Item*>* newItems, map<char*, char*>* newExits){
   title = newTitle;
-  description = newDescription;
-  item = newItem;
-  exit = newExit;
+  desc = newDesc;
+  items = newItems;
+  exits = newExits;
 }
 
-char* Room::getTitle()
-{
+char* Room::getTitle(){
+  //cout << "???" << endl;
   return title;
 }
 
-char* Room::getDescription() 
-{
-  return description;
+char* Room::getDesc(){
+  return desc;
 }
 
-vector<Item*>* Room::getItem()
-{
-  return item;
+vector<Item*>* Room::getItems(){
+  return items;
 }
 
-map<char*, char*>* Room::getExit()
-{
-  return exit;
+map<char*, char*>* Room::getExits(){
+  //Need to get cardinal directions later
+  return exits;
 }
 
-Room* Room::getExitRoom()
-{
-  //Hashmap Directions
+Room* Room::getExitRoom(){
+  //Hashmap direction
 }
 
-void Room::setDescription(char* newDescription)
-{
-  description = newDescription;
+void Room::setDesc(char* newDesc){
+  desc = newDesc;
 }
 
-void Room::setExit(char* direction, char* destination)
-{
-  (*exit)[direction] = destination;
+void Room::setExit(char* direction, char* destination){
+  (*exits)[direction] = destination; 
 }
 
-void Room::addItem(char* itemName)
-{
-  item->push_back(new Item(itemName));
+void Room::addItem(char* itemName){
+  items->push_back(new Item(itemName));
 }
