@@ -52,12 +52,12 @@ int main(){
   map<char*, Room*>* rm = new map<char*, Room*>;
   
   //Adding all the Rooms! Desc can change with events
-  buildRoom(rm, (char*)"Peter Pan's Jam", (char*)"Peter Pan is jamming with some songs + dance moves.");
-  buildRoom(rm, (char*)"Peter Pan's Fam", (char*)"Peter Pan's Nan is there to cheer you on. It fills you with DETERMINATION.");
-  buildRoom(rm, (char*)"Peter Pan's Clan", (char*)"Peter Pan's former clan is in tears after they heard about Peter Pan's fast departure.");
-  buildRoom(rm, (char*)"Peter Pan's Madame Ma'am", (char*)"In front of you is a hearty little farm, with a tidy house and a large barn. On the front porch a woman sweeps the floor.");
-  buildRoom(rm, (char*)"Peter Jin's North Berlin", (char*)"Tumbleweeds roll over houses and dush-filled wells... But the streets are far from deserted. You come across a gathering of around a hundred people clamoring over something...");
-  buildRoom(rm, (char*)"Peter Puffin", (char*)"As you walk in a small pufferfish the size of a pea inflates into the size of two elephants. It stares you down with somewhat kind eyes...");
+  buildRoom(rm, (char*)"Araragi's Residence", (char*)"This is the house of our main character, Koyomi Araragi.");
+  buildRoom(rm, (char*)"Eikou Cram School", (char*)"Peter Pan's Nan is there to cheer you on. It fills you with DETERMINATION.");
+  buildRoom(rm, (char*)"Namishiro Park", (char*)"Peter Pan's former clan is in tears after they heard about Peter Pan's fast departure.");
+  buildRoom(rm, (char*)"Naoetsu Private High School", (char*)"In front of you is a hearty little farm, with a tidy house and a large barn. On the front porch a woman sweeps the floor.");
+  buildRoom(rm, (char*)"North Shirahebi Shrine", (char*)"Tumbleweeds roll over houses and dush-filled wells... But the streets are far from deserted. You come across a gathering of around a hundred people clamoring over something...");
+  buildRoom(rm, (char*)"Sengoku Residence", (char*)"This is the house of Nadeko Sengoku");
   buildRoom(rm, (char*)"Jin & Out Fanbase", (char*)"Out in the distance a big broccoli building with the shape of a fan stands firm on a hill, with so many thousands of people entering in and out of the building that you wonder if your eyes are playing tricks on you. But that's weird. Just a few days ago, wasn't there nothing? You spot a guy cooling himself off with a fan in the corner...");
   buildRoom(rm, (char*)"Jin & Out", (char*)"A building the size of a skyscraper towers over the middle of a densely populated city. Employees can be seen hurrying from floor to floor through the pristine glass windows. Then you look up, and see a column of black smoke rupturing from the top of the restraunt. A worker in red and yellow runs towards you.");
   buildRoom(rm, (char*)"Peter Jin's Inn", (char*)"In front of you stands a cozy chest-shaped inn frying buns and flipping prabby catties.");
