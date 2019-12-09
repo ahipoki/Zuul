@@ -5,7 +5,7 @@
 #include "Command.h"
 #include "Room.h"
 
-class Plot : public Command {
+class Story : public Command {
  public:
   Plot(char*);
   int getType();
