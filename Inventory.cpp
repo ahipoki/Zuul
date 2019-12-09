@@ -1,43 +1,29 @@
+#ifndef ROOM_H
+#define ROOM_H
+
 #include <iostream>
 #include <cstring>
 #include <vector>
-#include <iterator>
-#include "Inventory.h"
+#include <map>
 #include "Item.h"
 
-/*
- *Method to check your inventory
- *.cpp file
- */
+using namespace std;
 
-Inventory::Inventory(char* newDescription) : Command(newDescription)
-{
-
-}
-
-int Inventory::getType()
-{
-  return 6;
-}
-
-char* Inventory::returnBurn(char* key)
-{
-  return key;
-}
-
-void Inventory::show(vector<Item*>* bag)
-{
-  std::vector<Item*>::iterator bagIt;
-  if (bag->begin() != bag->end())
-  {
-    for (bagIt = bag->begin(); bagIt != bag->end(); ++bagIt)
-    {
-      std::cout << (*bagIt)->getName() << " " << std::endl;
-    }
-    std::cout << std::endl;
-  }
-  else
-  {
-    std::cout << "You don't have any items" << std::endl;
-  }
-}
+class Room{
+ public:
+  Room(char*, char*, vector<Item*>*, map<char*, char*>*);
+  char* getTitle();
+  char* getDesc();
+  vector<Item*>* getItems();
+  map<char*, char*>* getExits();
+  Room* getExitRoom();
+  void setDesc(char*);
+  void setExit(char*, char*);
+  void addItem(char*);
+ private:
+  char* title;
+  char* desc;
+  vector<Item*>* items;
+  map<char*, char*>* exits;
+};
+#endif
