@@ -5,36 +5,30 @@
 #include "Head.h"
 #include "Room.h"
 
-Head::Head(char* newDescription) : Command(newDescription)
-{
+Head::Head(char* newDesc) : Command(newDesc) {
   
 }
 
-int Head::getType()
-{
+int Head::getType(){
   return 3;
 }
 
-char* Head::returnBurn()
-{
-  return (char*) "You move a direction. (Input your move)";
+char* Head::returnBurn(){
+  return (char*) "You head in the clouds. (Input cardinal direction)";
 }
 
-void Head::move(char* key, map<char*, Room*>* rm, Room **currentRoomptr)
-{
-  std::map<char*, char*>::iterator exitIt;
-  map<char*, char*>* exit = (*currentRoomptr)->getExit();
+//The move just takes in the userin destination and iterates through the exits to try and find an exit room to set the currentRoom to 
+void Head::move(char* key, map<char*, Room*>* rm, Room **currentRoomptr){
+  map<char*, char*>::iterator eIt;
+  map<char*, char*>* exits = (*currentRoomptr)->getExits();
   bool found = false;
-  for (exitIt = exit->begin(); exitIt != exit->end(); ++exitIt)
-  {
-    if (strcmp(exitIt->first, key) == 0)
-    {
-      (*currentRoomptr) = ((*rm)[exitIt->second]);
+  for(eIt = exits->begin(); eIt != exits->end(); ++eIt){
+    if(strcmp(eIt->first, key) == 0){
+      (*currentRoomptr) = ((*rm)[eIt->second]);
       found = true;
     }
   }
-  if (found == false)
-  {
-    std::cout << "That's not a proper direction" << std::endl;
+  if(found == false){
+    cout << "No direction found!" << endl;
   }
 }
