@@ -4,7 +4,7 @@
 #include <iterator>
 #include "Help.h"
 
-Help::Help(char* newDesc) : Command (newDesc) {
+Help::Help(char* newDescription) : Command (newDescription) {
   
 }
 
