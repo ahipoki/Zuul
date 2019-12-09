@@ -2,22 +2,20 @@
 #include <cstring>
 #include "Command.h"
 
-Command::Command(char* newDescription)
-{
-  description = newDescription;
+using namespace std;
+
+Command::Command(char* newDesc){
+  desc = newDesc;
 }
 
-char* Command::getDescription()
-{
-  return description;
+char* Command::getDesc(){
+  return desc;
 }
 
-int Command::getType()
-{
+int Command::getType(){
 
 }
 
-char* Command::returnBurn()
-{
+char* Command::returnBurn(){
 
 }
