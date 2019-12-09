@@ -6,7 +6,7 @@
 #include "Item.h"
 #include "Room.h"
 
-Grab::Grab(char* newDesc) : Command(newDesc){
+Grab::Grab(char* newDescription) : Command(newDescription){
 
 }
 
