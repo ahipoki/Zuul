@@ -2,7 +2,7 @@
 #include <cstring>
 #include "Quit.h"
 
-Quit::Quit(char* newDesc) : Command(newDesc){
+Quit::Quit(char* newDescription) : Command(newDescription){
 
 }
 
