@@ -2,23 +2,19 @@
 #include <cstring>
 #include "Quit.h"
 
-Quit::Quit(char* newDescription) : Command(newDescription)
-{
-  
+Quit::Quit(char* newDesc) : Command(newDesc){
+
 }
 
-int Quit::getType()
-{
+int Quit::getType(){
   return 9;
 }
 
-char* Quit::returnBurn()
-{
-  return (char*) "You missed quitting. Try again.";
+char* Quit::returnBurn(){
+  return (char*)"Just quit, don't throw a fit! :)";
 }
 
-void Quit::quit()
-{
-  std::cout << "You successfully quit" << std::endl;
+void Quit::getMeOut(){
+  cout << "Thanks for playing!" << endl;
   exit(0);
 }
