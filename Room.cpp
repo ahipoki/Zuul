@@ -6,9 +6,9 @@
 #include "Item.h"
 #include "Room.h"
 
-Room::Room(char* newTitle, char* newDesc, vector<Item*>* newItems, map<char*, char*>* newExits){
+Room::Room(char* newTitle, char* newDescription, vector<Item*>* newItems, map<char*, char*>* newExits){
   title = newTitle;
-  desc = newDesc;
+  description = newDescription;
   items = newItems;
   exits = newExits;
 }
@@ -18,8 +18,8 @@ char* Room::getTitle(){
   return title;
 }
 
-char* Room::getDesc(){
-  return desc;
+char* Room::getDescription(){
+  return description;
 }
 
 vector<Item*>* Room::getItems(){
@@ -35,8 +35,8 @@ Room* Room::getExitRoom(){
   //Hashmap direction
 }
 
-void Room::setDesc(char* newDesc){
-  desc = newDesc;
+void Room::setDesc(char* newDescription){
+  description = newDescription;
 }
 
 void Room::setExit(char* direction, char* destination){
