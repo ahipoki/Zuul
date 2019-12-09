@@ -74,58 +74,63 @@ int main(){
   ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"EAST", (char*)"Namishiro Park");
   ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Nanahyakuichi Public Middle School");
 
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"EAST", (char*)"Peter Pan's Madame Ma'am");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"SOUTH", (char*)"Room Name");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"WEST", (char*)"Room Name");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"NORTH", (char*)"Room Name");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"EAST", (char*)"The Araragi Residence");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"SOUTH", (char*)"The Kanbaru Residence");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"WEST", (char*)"The Hanekawa Residence");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"NORTH", (char*)"Tamikura Apartments");
 
-  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"EAST", (char*)"Room Name");
-  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"SOUTH", (char*)"Room Name");
+  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"EAST", (char*)"Tamikura Apartments");
+  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"SOUTH", (char*)"The Hachikuji Residence");
   ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"WEST", (char*)"The Araragi Residence");
-  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"NORTH", (char*)"The Araragi Residence");
+  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"NORTH", (char*)"The Tsunade Residence");
 
   ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"NORTH", (char*)"The Araragi Residence");
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"SOUTH", (char*)"Room Name");
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"EAST", (char*)"Room Name");
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"WEST", (char*)"Room Name");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"SOUTH", (char*)"The Oikura Residence");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"EAST", (char*)"The Hanekawa Residence");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"WEST", (char*)"Tamikura Apartments");
   
-  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"NORTH", (char*)"Room Name");
-  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"EAST", (char*)"Room Name");
-  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"WEST", (char*)"Room Name");
+  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"NORTH", (char*)"The Kanbaru Residence");
+  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"EAST", (char*)"Haruya Book Store");
+  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"WEST", (char*)"The Sengoku Residence");
 
-  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"NORTH", (char*)"Room Name");
-  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"EAST", (char*)"Room Name");
-  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"SOUTH", (char*)"Room Name");
+  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"NORTH", (char*)"Haruya Book Store");
+  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"EAST", (char*)"North Shirahebi Shrine");
+  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"SOUTH", (char*)"Nanahyakuichi Public Middle School");
 
-  ((*rm)[(char*)"The Tsunade Residence"])->setExit((char*)"SOUTH", (char*)"Room Name");
+  ((*rm)[(char*)"The Tsunade Residence"])->setExit((char*)"SOUTH", (char*)"Namishiro Park");
 
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"NORTH", (char*)"Peter Pan's Madame Ma'am");
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"EAST", (char*)"Peter Pan's Dam");
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"SOUTH", (char*)"Peter Jin's LITTI IN MY CITY");
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"WEST", (char*)"Jin & Out");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"NORTH", (char*)"The Hanekawa Residence");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"EAST", (char*)"Naoetsu Private High School");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"SOUTH", (char*)"Eikou Cram School");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"WEST", (char*)"Namishiro Park");
 
-  ((*rm)[(char*)"The Hachikuji Residence"])->setExit((char*)"NORTH", (char*)"Peter Jin's North Berlin");
+  ((*rm)[(char*)"The Hachikuji Residence"])->setExit((char*)"NORTH", (char*)"Namishiro Park");
 
-  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"EAST", (char*)"Peter Pan's Milk Can");
-  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"SOUTH", (char*)"Peter Puffin");
-  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"WEST", (char*)"Peter Puffin");
+  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"EAST", (char*)"Eikou Cram School");
+  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"SOUTH", (char*)"Tamikura Apartments");
+  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"WEST", (char*)"Naoetsu Private High School");
 
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"SOUTH", (char*)"Peter Jin's Tin Bin");
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"NORTH", (char*)"Jin & Out Fanbase");
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"WEST", (char*)"Jin & Out Fanbase");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"SOUTH", (char*)"The Sengoku Residence");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"NORTH", (char*)"Mister Donut");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"WEST", (char*)"North Shirahebi Shrine");
 
-  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"SOUTH", (char*)"Peter Jin's LITTI IN MY CITY");
-  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"NORTH", (char*)"Jin & Out");
+  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"SOUTH", (char*)"The Araragi Residence");
+  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"NORTH", (char*)"The Sengoku Residence");
 	
-  ((*rm)[(char*)"The Oikura Residence"])->setExit((char*)"NORTH", (char*)"Peter Jin's Inn");
+  ((*rm)[(char*)"The Oikura Residence"])->setExit((char*)"NORTH", (char*)"Naoetsu Private High School");
   
-  ((*rm)[(char*)"Mister Donut"])->setExit((char*)"SOUTH", (char*)"Peter Pan's Dam");
+  ((*rm)[(char*)"Mister Donut"])->setExit((char*)"SOUTH", (char*)"Haruya Book Store");
 	
-  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"NORTH", (char*)"Peter Pan's Dam");
-  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"SOUTH", (char*)"Peter Pan's Dam");
+  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"NORTH", (char*)"Eikou Cram School");
+  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"SOUTH", (char*)"North Shirahebi Shrine");
 	
   //Adding all the **starting** items (MANY more items are added as events play out)!
-  ((*rm)[(char*)"Peter Jin's Tin Bin"])->addItem((char*)"Peter_Jin's_Safety_Pin");
+  ((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Hitagi Senjougahara's Stapler");
+  ((*rm)[(char*)"Namishiro Park"])->addItem((char*)"Mayoi Hachikuji's Backpack");
+  ((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Suruga Kanbaru's Basketball");
+  ((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Nadeko Sengoku's Waist Pouch");
+  ((*rm)[(char*)"Eikou Cram School"])->addItem((char*)"A Study Book for Tsubasa Hanekawa");
+  ((*rm)[(char*)"Mister Donut"])->addItem((char*)"A Donut for Oshino Shinobu");
   
   //Inventory
   vector<Item*> bag;
@@ -138,7 +143,7 @@ int main(){
   //Current Room
   Room* currentRoom;
   Room** currentRoomptr = &currentRoom;
-  Room* lastRoom = ((*rm)[(char*)"Peter Pan's Jam"]);
+  Room* lastRoom = ((*rm)[(char*)"Mister Donut"]);
   
   //Command string and Keyword string
   char commandsarr[99];
@@ -149,9 +154,9 @@ int main(){
   //Initiating **starting** commands (more added later in events)
   commandsptr->push_back(new Help((char*)"HELP"));
   commandsptr->push_back(new Head((char*)"HEAD"));
-  commandsptr->push_back(new Grab((char*)"GRAB"));
-  commandsptr->push_back(new Toss((char*)"TOSS"));
-  commandsptr->push_back(new Sack((char*)"SACK"));
+  commandsptr->push_back(new PickUp((char*)"GRAB"));
+  commandsptr->push_back(new Drop((char*)"DROP"));
+  commandsptr->push_back(new Inventory((char*)"INVENTORY"));
   int* e = new int[15];
   for(int a = 0; a < 15; ++a){
     e[a] = 0;
@@ -162,9 +167,9 @@ int main(){
   //Setting running and current room to prepare for game start
   bool running = true;
   
-  currentRoom = ((*rm)[(char*)"Peter Pan's Jam"]);
+  currentRoom = ((*rm)[(char*)"The Araragi Residence"]);
 
-  cout << "Welcome to the world of Zuul! I'd like to thank my friend Peter Jin for making this game possible, and for helping me code. Peter Pan's Land is a world set in a dystopian future, where capitalism has led to the rise of Peter Jin & Peter Pan. Anyways, have fun playing!" << endl;
+  cout << "Welcome to my Zuul project." << endl; 
   
   printRoomString(currentRoom);
   
@@ -196,39 +201,39 @@ int main(){
     //The basis of activating an event is finding the current room, checking the event array connected to that room, then making another event based off of those qualities
     //The .png map contains all of the event method intents
     int* ev = ((Talk*)(commands.at(5)))->getEv();
-    if(currentRoom == (*rm)[(char*)"Peter Pan's Jam"]){
+    if(currentRoom == (*rm)[(char*)"The Araragi Residence"]){
       if(ev[0] == true){
-	((*rm)[(char*)"Peter Pan's Jam"])->setDesc((char*)"Peter Pan *was jamming with some songs + dance moves");
+	((*rm)[(char*)"The Araragi Residence"])->setDescription((char*)"Peter Pan *was jamming with some songs + dance moves");
 	
-	((*rm)[(char*)"Peter Pan's Jam"])->setExit((char*)"EAST", (char*)"Peter Pan's Fam");
-        ((*rm)[(char*)"Peter Pan's Jam"])->setExit((char*)"SOUTH", (char*)"Peter Puffin");
+	((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"EAST", (char*)"Peter Pan's Fam");
+        ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Peter Puffin");
 
-	((*rm)[(char*)"Peter Pan's Jam"])->addItem((char*)"Peter's_Jam");
+	((*rm)[(char*)"The Araragi Residence"])->addItem((char*)"Peter's_Jam");
 	ev[0] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Pan's Fam"]){
+    }else if(currentRoom == (*rm)[(char*)"Eikou Cram School"]){
       if(ev[1] == true){
-	commandsptr->push_back(new Plot((char*)"PLOT"));
+	commandsptr->push_back(new Story((char*)"STORY"));
 
-	((*rm)[(char*)"Peter Pan's Fam"])->addItem((char*)"Peter_Pan's_SPAM");
+	((*rm)[(char*)"Eikou Cram School"])->addItem((char*)"Peter_Pan's_SPAM");
 	
 	ev[1] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Pan's Clan"]){
+    }else if(currentRoom == (*rm)[(char*)"Namishiro Park"]){
       if(ev[2] == true){
-	((*rm)[(char*)"Peter Pan's Clan"])->addItem((char*)"Peter_Pan's_Saucepan");
+	((*rm)[(char*)"Namishiro Park"])->addItem((char*)"Peter_Pan's_Saucepan");
 	ev[2] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Pan's Madame Ma'am"]){
+    }else if(currentRoom == (*rm)[(char*)"Naoetsu Private High School"]){
       if(ev[3] == true){
-	((*rm)[(char*)"Peter Pan's Madame Ma'am"])->addItem((char*)"Peter_Pan's_Yam");
+	((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Peter_Pan's_Yam");
 	ev[3] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Jin's North Berlin"]){
+    }else if(currentRoom == (*rm)[(char*)"North Shirahebi Shrine"]){
       if(ev[4] == true && strcmp(commandstr, "TALK") == 0){
 	vector<Item*>::iterator bagIt;
 	bool friesYes = false;
@@ -276,7 +281,7 @@ int main(){
 		}
 	      }
 	    }
-	    ((*rm)[(char*)"Peter Jin's North Berlin"])->addItem((char*)"Peter_Pan's_Ram");
+	    ((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Peter_Pan's_Ram");
 
 	    if(burgerYes){
 	      cout << "The moment you pull out the burger, the lamb is instantly forgotten about, and the mob nearly rolls you over to get their hands on the burger. Satisfied, the mosh pit then slides south down the hill like the avalanche from a storm. All that's left is a ram. Wait, it wasn't a lamb?" << endl;
@@ -285,7 +290,7 @@ int main(){
 	    }
 	     
 	    
-	    ((*rm)[(char*)"Peter Jin's North Berlin"])->setDesc((char*)"Tumbleweeds roll over houses and dush-filled wells... But the streets are far from deserted. Just recently, a gathering of around a hundred people stormed south, leaving footprints randomly plastered about the ground...");
+	    ((*rm)[(char*)"Peter Jin's North Berlin"])->setDescription((char*)"Tumbleweeds roll over houses and dush-filled wells... But the streets are far from deserted. Just recently, a gathering of around a hundred people stormed south, leaving footprints randomly plastered about the ground...");
 	    
 	    ev[4] = 2;
 	    printRoomString(currentRoom);
@@ -294,7 +299,7 @@ int main(){
 	  }
 	}
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Puffin"]){
+    }else if(currentRoom == (*rm)[(char*)"The Sengoku Residence"]){
       if(ev[5] == true){
 	vector<Item*>::iterator bagIt;
 	bool finYes = false;
@@ -323,7 +328,7 @@ int main(){
 
 	  cout << "The only trace of the once grandiose creature is a small but plump mandarin..." << endl;
 
-	  ((*rm)[(char*)"Peter Puffin"])->setDesc((char*)"RIP Peter Puffin (2019-2019)");
+	  ((*rm)[(char*)"Peter Puffin"])->setDescription((char*)"RIP Peter Puffin (2019-2019)");
 
 	  
           ((*rm)[(char*)"Peter Puffin"])->addItem((char*)"Peter_Jin's_Mandarin");
@@ -347,15 +352,15 @@ int main(){
 	  currentRoom = ((*rm)[(char*)"Peter Pan's Jam"]);
 	}
       }
-    }else if(currentRoom == (*rm)[(char*)"Jin & Out Fanbase"]){
+    }else if(currentRoom == (*rm)[(char*)"The Tsunade Residence"]){
       if(ev[6] == true){
 	
-        ((*rm)[(char*)"Jin & Out Fanbase"])->addItem((char*)"Peter_Pan's_Fan");
+        ((*rm)[(char*)"The Tsunade Residence"])->addItem((char*)"Peter_Pan's_Fan");
 	
 	ev[6] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Jin & Out"]){
+    }else if(currentRoom == (*rm)[(char*)"Tamikura Apartments"]){
       if(ev[7] == true && strcmp(commandstr, "TALK") == 0){
 	vector<Item*>::iterator bagIt;
 	bool yamYes = false;
@@ -394,7 +399,7 @@ int main(){
 	    ((*rm)[(char*)"Jin & Out"])->addItem((char*)"Jin&Out_Burger");
 	    ((*rm)[(char*)"Jin & Out"])->addItem((char*)"Jin&Out_Fries");
 
-	    ((*rm)[(char*)"Jin & Out"])->setDesc((char*)"A building the size of a skyscraper towers over the middle of a densely populated city. Employees can be seen hurrying from floor to floor through the pristine glass windows. Then you look up, and no longer see a column of smoke erupting from the building.");
+	    ((*rm)[(char*)"Jin & Out"])->setDescription((char*)"A building the size of a skyscraper towers over the middle of a densely populated city. Employees can be seen hurrying from floor to floor through the pristine glass windows. Then you look up, and no longer see a column of smoke erupting from the building.");
 	    
 	    ev[7] = 2;
 	    printRoomString(currentRoom);
@@ -403,7 +408,7 @@ int main(){
 	  }
 	}
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Jin's Inn"]){
+    }else if(currentRoom == (*rm)[(char*)"The Hachikuji Residence"]){
       if(ev[8] == true){
 	((*rm)[(char*)"Peter Jin's Inn"])->addItem((char*)"Peter_Jin's_Fin");
 	ev[8] = 2;
@@ -446,7 +451,7 @@ int main(){
 	  ev[8] = 3;
 	}
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Pan's Dam"]){
+    }else if(currentRoom == (*rm)[(char*)"The Hanekawa Residenece"]){
       if(ev[9] == true && strcmp(commandstr, "TALK") == 0){
 	if(ev[4] == 2 && ev[14] == 2){
 	  char scrollText[999] = "";
@@ -471,19 +476,19 @@ int main(){
 	  //LITTI CITY
 	  ev[13] = 2;
 
-	  ((*rm)[(char*)"Peter Pan's Dam"])->setDesc((char*)"Birds chirp and fish splash as the water flows through the dam, as smooth as silk!");
+	  ((*rm)[(char*)"Peter Pan's Dam"])->setDescription((char*)"Birds chirp and fish splash as the water flows through the dam, as smooth as silk!");
 
-	((*rm)[(char*)"Peter Jin's LITTI IN MY CITY"])->setDesc((char*)"Peter Jin's LITTI IN MY CITY looks beautiful when lit up at night, looming palaces overlooking serene lakes, and elegant lampposts blazing on every street...");
+	((*rm)[(char*)"Peter Jin's LITTI IN MY CITY"])->setDescription((char*)"Peter Jin's LITTI IN MY CITY looks beautiful when lit up at night, looming palaces overlooking serene lakes, and elegant lampposts blazing on every street...");
 	
 	  printRoomString(currentRoom);
         }
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Pan's Evil Twin"]){
+    }else if(currentRoom == (*rm)[(char*)"Haruya Book Store"]){
       if(ev[10] == true){
 	ev[10] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Pan's Milk Can"]){
+    }else if(currentRoom == (*rm)[(char*)"Nanahyakuichi Public Middle School"]){
       if(ev[11] == true){
 	char scrollText [999] = "";
 	vector<Item*>::iterator bagIt;
@@ -557,16 +562,16 @@ int main(){
 	  }  
 	  }
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Jin's Tin Bin"]){
+    }else if(currentRoom == (*rm)[(char*)"The Oikura Residence"]){
       if(ev[12] == true){
 	ev[12] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Jin's LITTI IN MY CITY"]){
+    }else if(currentRoom == (*rm)[(char*)"Mister Donut"]){
       if(ev[13] == 2){
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Peter Jin's South Berlin"]){
+    }else if(currentRoom == (*rm)[(char*)"The Kanbaru Residence"]){
       if(ev[14] == true && strcmp(commandstr, "TALK") == 0){
 	vector<Item*>::iterator bagIt;
 	bool friesYes = false;
@@ -622,7 +627,7 @@ int main(){
 	      cout << "The moment you pull out the fries, the ram is instantly forgotten about, and the mob nearly rolls you over to get their hands on the burger. Satisfied, the mosh pit then slides north down the hill like the avalanche from a storm. All that's left is a lamb. Wait, it wasn't a ram?" << endl;
 	    }
 	    
-	    ((*rm)[(char*)"Peter Jin's South Berlin"])->setDesc((char*)"Seaweed rolls over houses and dry cracked wells... But the streets are far from deserted. Just recently, a gathering of around a hundred people stormed south, leaving footprints randomly plastered about the ground...");
+	    ((*rm)[(char*)"Peter Jin's South Berlin"])->setDescription((char*)"Seaweed rolls over houses and dry cracked wells... But the streets are far from deserted. Just recently, a gathering of around a hundred people stormed south, leaving footprints randomly plastered about the ground...");
 	    ev[14] = 2;
 	    printRoomString(currentRoom);
 	  }else{
@@ -635,8 +640,8 @@ int main(){
 }
 
 //Build room takes in title and desc, makes new rooom, then adds that to the map
-void buildRoom (map<char*,Room*>* rm, char* rmTitle, char* rmDesc) {
-  (*rm)[rmTitle] = new Room(rmTitle, rmDesc, new vector<Item*>, new map<char*,char*>);
+void buildRoom (map<char*,Room*>* rm, char* rmTitle, char* rmDescription) {
+  (*rm)[rmTitle] = new Room(rmTitle, rmDescription, new vector<Item*>, new map<char*,char*>);
 }
 
 //process userin, decide if it is one or two words, then return one or two words
@@ -696,7 +701,7 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
   vector<Command*>::iterator commandsIt;
     bool found = false;
     for(commandsIt = commandsptr->begin(); commandsIt != commandsptr->end(); ++commandsIt){
-      if(strcmp((*commandsIt)->getDesc(), commandstr) == 0){
+      if(strcmp((*commandsIt)->getDescription(), commandstr) == 0){
 	found = true;
 	break;
       }
@@ -713,25 +718,25 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
 	  cout << ((Head*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
-      case GRAB_TYPE:
+      case PICKUP_TYPE:
 	if(strcmp(keywordstr,"") != 0){
-	  ((Grab*)(*commandsIt))->take(currentRoomptr, bagptr, keywordstr);
+	  ((PickUp*)(*commandsIt))->take(currentRoomptr, bagptr, keywordstr);
 	}else{
-	  cout << ((Grab*)(*commandsIt))->returnBurn() << endl;
+	  cout << ((PickUp*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
-      case TOSS_TYPE:
+      case DROP_TYPE:
 	if(strcmp(keywordstr,"") != 0){
-	  ((Toss*)(*commandsIt))->drop(currentRoomptr, bagptr, keywordstr);
+	  ((Drop*)(*commandsIt))->toss(currentRoomptr, bagptr, keywordstr);
 	}else{
-	  cout << ((Toss*)(*commandsIt))->returnBurn() << endl;
+	  cout << ((Drop*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
-      case SACK_TYPE:
+      case INVENTORY_TYPE:
 	if(strcmp(keywordstr,"") == 0){
-	  ((Sack*)(*commandsIt))->show(bagptr);
+	  ((Inventory*)(*commandsIt))->show(bagptr);
 	}else{
-	  cout << "You rummaged through your sack to find \"" << keywordstr << "\", but then you realized that \"sack\" is a one word command..." << endl;
+	  cout << "You rummaged through your inventory to find \"" << keywordstr << "\", but then you realized that \"inventory\" is a one word command..." << endl;
 	}
 	break;
       case TALK_TYPE:
@@ -748,11 +753,11 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
 	  cout << ((Help*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
-      case PLOT_TYPE:
+      case STORY_TYPE:
         if(strcmp(keywordstr,"") == 0){
-	  ((Plot*)(*commandsIt))->printMap(currentRoomptr, rm, encRoomsptr);
+	  ((Story*)(*commandsIt))->printMap(currentRoomptr, rm, encRoomsptr);
 	}else{
-	  cout << ((Plot*)(*commandsIt))->returnBurn() << endl;
+	  cout << ((Story*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
       case QUIT_TYPE:
@@ -788,7 +793,7 @@ void printItemString(vector<Item*>* items){
 //A nice package that gives the user all of the needed UI of exits, items, and currentRoom
 void printRoomString(Room* currentRoom){
   cout << "You are at " << currentRoom->getTitle() << "!" << endl;
-  cout << currentRoom->getDesc() << endl;
+  cout << currentRoom->getDescription() << endl;
   cout << "Exits: ";
   printExitString(currentRoom->getExits());
   cout << "Items: ";

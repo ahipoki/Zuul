@@ -20,7 +20,7 @@ void Help::printHelp(vector<Command*>* commands){
   vector<Command*>::iterator comIt;
   cout << "Your commands are: ";
   for(comIt = commands->begin(); comIt != commands->end(); ++comIt){
-    cout << (*comIt)->getDesc() << " ";
+    cout << (*comIt)->getDescription() << " ";
   }
   cout << endl;
 }

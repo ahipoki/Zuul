@@ -2,7 +2,7 @@
 #include <cstring>
 #include <vector>
 #include <iterator>
-#include "Grab.h"
+#include "PickUp.h"
 #include "Item.h"
 #include "Room.h"
 

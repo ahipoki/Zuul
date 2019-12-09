@@ -35,7 +35,7 @@ Room* Room::getExitRoom(){
   //Hashmap direction
 }
 
-void Room::setDesc(char* newDescription){
+void Room::setDescription(char* newDescription){
   description = newDescription;
 }
 
