@@ -4,12 +4,12 @@
 
 using namespace std;
 
-Command::Command(char* newDesc){
-  desc = newDesc;
+Command::Command(char* newDescription){
+  description = newDescription;
 }
 
-char* Command::getDesc(){
-  return desc;
+char* Command::getDescription(){
+  return description;
 }
 
 int Command::getType(){
