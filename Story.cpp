@@ -2,22 +2,22 @@
 #include <cstring>
 #include <vector>
 #include <map>
-#include "Plot.h"
+#include "Story.h"
 #include "Room.h"
 
-Plot::Plot(char* newDesc) : Command(newDesc) {
+Story::Story(char* newDescription) : Command(newDescription) {
   
 }
 
-int Plot::getType(){
+int Story::getType(){
   return 8;
 }
 
-char* Plot::returnBurn(){
+char* Story::returnBurn(){
   return (char*) "This ain't no treasure map!";
 }
 
-void Plot::printMap(Room** currentRoomptr, map<char*,Room*>* rm, vector<char*>* encRooms){
+void Story::printMap(Room** currentRoomptr, map<char*,Room*>* rm, vector<char*>* encRooms){
   vector<char*>::iterator enIt;
   map<char*,Room*>::iterator rmIt;
 
