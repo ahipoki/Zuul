@@ -3,6 +3,7 @@
 #include <vector>
 #include <iterator>
 #include <map>
+#include <stdlib.h>
 #include "Item.h"
 #include "Room.h"
 

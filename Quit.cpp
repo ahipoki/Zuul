@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <stdlib.h>
 #include "Quit.h"
 
 Quit::Quit(char* newDescription) : Command(newDescription){

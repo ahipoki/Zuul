@@ -2,6 +2,7 @@
 #include <cstring>
 #include <vector>
 #include <map>
+#include <stdlib.h>
 #include "Talk.h"
 #include "Item.h"
 #include "Room.h"
