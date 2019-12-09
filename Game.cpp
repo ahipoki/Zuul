@@ -52,77 +52,78 @@ int main(){
   map<char*, Room*>* rm = new map<char*, Room*>;
   
   //Adding all the Rooms! Desc can change with events
-  buildRoom(rm, (char*)"Araragi's Residence", (char*)"This is the house of our main character, Koyomi Araragi.");
+  buildRoom(rm, (char*)"The Araragi Residence", (char*)"This is the house of our main character, Koyomi Araragi.");
   buildRoom(rm, (char*)"Eikou Cram School", (char*)"Peter Pan's Nan is there to cheer you on. It fills you with DETERMINATION.");
   buildRoom(rm, (char*)"Namishiro Park", (char*)"Peter Pan's former clan is in tears after they heard about Peter Pan's fast departure.");
   buildRoom(rm, (char*)"Naoetsu Private High School", (char*)"In front of you is a hearty little farm, with a tidy house and a large barn. On the front porch a woman sweeps the floor.");
   buildRoom(rm, (char*)"North Shirahebi Shrine", (char*)"Tumbleweeds roll over houses and dush-filled wells... But the streets are far from deserted. You come across a gathering of around a hundred people clamoring over something...");
-  buildRoom(rm, (char*)"Sengoku Residence", (char*)"This is the house of Nadeko Sengoku");
-  buildRoom(rm, (char*)"Jin & Out Fanbase", (char*)"Out in the distance a big broccoli building with the shape of a fan stands firm on a hill, with so many thousands of people entering in and out of the building that you wonder if your eyes are playing tricks on you. But that's weird. Just a few days ago, wasn't there nothing? You spot a guy cooling himself off with a fan in the corner...");
-  buildRoom(rm, (char*)"Jin & Out", (char*)"A building the size of a skyscraper towers over the middle of a densely populated city. Employees can be seen hurrying from floor to floor through the pristine glass windows. Then you look up, and see a column of black smoke rupturing from the top of the restraunt. A worker in red and yellow runs towards you.");
-  buildRoom(rm, (char*)"Peter Jin's Inn", (char*)"In front of you stands a cozy chest-shaped inn frying buns and flipping prabby catties.");
-  buildRoom(rm, (char*)"Peter Pan's Dam", (char*)"A huge dam divides the two rival kingdoms. But that's weird... There's no water flowing down! Could it be because of the clam flexing its tongue in the middle?");
-  buildRoom(rm, (char*)"Peter Pan's Evil Twin", (char*)"The evil peanut butter swirls on top of Peter Jin's bread top hat. it's time.");
-  buildRoom(rm, (char*)"Peter Pan's Milk Can", (char*)"But the legends... could it be? You could'nt possibly be at the illusive milk can house of Peter Pan!");
-  buildRoom(rm, (char*)"Peter Jin's Tin Bin", (char*)"It's literally the basement of Jin & Out... molding burger wrappers and crumpled paper cups pile miles high into every direction... It's like Scrooge mcDuck's vault, except full of junk");
-  buildRoom(rm, (char*)"Peter Jin's LITTI IN MY CITY", (char*)"An entire city seems to almost completely be out of power... except for a flickering lampost illuminating an old man sitting on a blue metal bench, reading a newspaper.");
-  buildRoom(rm, (char*)"Peter Jin's South Berlin", (char*)"Seaweed rolls over houses and dry cracked wells... But the streets are far from deserted. You come across a gathering of around a hundred people clamoring over something...");
+  buildRoom(rm, (char*)"The Sengoku Residence", (char*)"This is the house of Nadeko Sengoku");
+  buildRoom(rm, (char*)"The Tsunade Residence", (char*)"Out in the distance a big broccoli building with the shape of a fan stands firm on a hill, with so many thousands of people entering in and out of the building that you wonder if your eyes are playing tricks on you. But that's weird. Just a few days ago, wasn't there nothing? You spot a guy cooling himself off with a fan in the corner...");
+  buildRoom(rm, (char*)"Tamikura Apartments", (char*)"A building the size of a skyscraper towers over the middle of a densely populated city. Employees can be seen hurrying from floor to floor through the pristine glass windows. Then you look up, and see a column of black smoke rupturing from the top of the restraunt. A worker in red and yellow runs towards you.");
+  buildRoom(rm, (char*)"The Hachikuji Residence", (char*)"In front of you stands a cozy chest-shaped inn frying buns and flipping prabby catties.");
+  buildRoom(rm, (char*)"The Hanekawa Residence", (char*)"A huge dam divides the two rival kingdoms. But that's weird... There's no water flowing down! Could it be because of the clam flexing its tongue in the middle?");
+  buildRoom(rm, (char*)"Haruya Book Store", (char*)"The evil peanut butter swirls on top of Peter Jin's bread top hat. it's time.");
+  buildRoom(rm, (char*)"Nanahyakuichi Public Middle School", (char*)"But the legends... could it be? You could'nt possibly be at the illusive milk can house of Peter Pan!");
+  buildRoom(rm, (char*)"The Oikura Residence", (char*)"It's literally the basement of Jin & Out... molding burger wrappers and crumpled paper cups pile miles high into every direction... It's like Scrooge mcDuck's vault, except full of junk");
+  buildRoom(rm, (char*)"Mister Donut", (char*)"An entire city seems to almost completely be out of power... except for a flickering lampost illuminating an old man sitting on a blue metal bench, reading a newspaper.");
+  buildRoom(rm, (char*)"The Kanbaru Residence", (char*)"Seaweed rolls over houses and dry cracked wells... But the streets are far from deserted. You come across a gathering of around a hundred people clamoring over something...");
   //Adding all the Exits that the game starts out with (more added later in events)
 
-  ((*rm)[(char*)"Peter Pan's Fam"])->setExit((char*)"WEST", (char*)"Peter Pan's Jam");
-  ((*rm)[(char*)"Peter Pan's Fam"])->setExit((char*)"SOUTH", (char*)"Jin & Out Fanbase");
-  ((*rm)[(char*)"Peter Pan's Fam"])->setExit((char*)"EAST", (char*)"Peter Pan's Clan");
+  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Eikou Cram School");
+  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
+  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"EAST", (char*)"Namishiro Park");
+  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Nanahyakuichi Public Middle School");
 
-  ((*rm)[(char*)"Peter Pan's Clan"])->setExit((char*)"EAST", (char*)"Peter Pan's Madame Ma'am");
-  ((*rm)[(char*)"Peter Pan's Clan"])->setExit((char*)"SOUTH", (char*)"Jin & Out");
-  ((*rm)[(char*)"Peter Pan's Clan"])->setExit((char*)"WEST", (char*)"Peter Pan's Fam");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"EAST", (char*)"Peter Pan's Madame Ma'am");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"SOUTH", (char*)"Room Name");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"WEST", (char*)"Room Name");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"NORTH", (char*)"Room Name");
 
-  ((*rm)[(char*)"Peter Pan's Madame Ma'am"])->setExit((char*)"EAST", (char*)"Peter Jin's North Berlin");
-  ((*rm)[(char*)"Peter Pan's Madame Ma'am"])->setExit((char*)"SOUTH", (char*)"Peter Jin's Inn");
-  ((*rm)[(char*)"Peter Pan's Madame Ma'am"])->setExit((char*)"WEST", (char*)"Peter Pan's Clan");
+  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"EAST", (char*)"Room Name");
+  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"SOUTH", (char*)"Room Name");
+  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"WEST", (char*)"The Araragi Residence");
+  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"NORTH", (char*)"The Araragi Residence");
 
-  ((*rm)[(char*)"Peter Jin's North Berlin"])->setExit((char*)"SOUTH", (char*)"Peter Pan's Dam");
-  ((*rm)[(char*)"Peter Jin's North Berlin"])->setExit((char*)"WEST", (char*)"Peter Pan's Madame Ma'am");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"NORTH", (char*)"The Araragi Residence");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"SOUTH", (char*)"Room Name");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"EAST", (char*)"Room Name");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"WEST", (char*)"Room Name");
   
-  ((*rm)[(char*)"Peter Puffin"])->setExit((char*)"NORTH", (char*)"Peter Pan's Jam");
-  ((*rm)[(char*)"Peter Puffin"])->setExit((char*)"EAST", (char*)"Jin & Out Fanbase");
+  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"NORTH", (char*)"Room Name");
+  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"EAST", (char*)"Room Name");
+  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"WEST", (char*)"Room Name");
 
-  ((*rm)[(char*)"Jin & Out Fanbase"])->setExit((char*)"NORTH", (char*)"Peter Pan's Fam");
-  ((*rm)[(char*)"Jin & Out Fanbase"])->setExit((char*)"EAST", (char*)"Jin & Out");
-  ((*rm)[(char*)"Jin & Out Fanbase"])->setExit((char*)"SOUTH", (char*)"Peter Pan's Milk Can");
-  ((*rm)[(char*)"Jin & Out Fanbase"])->setExit((char*)"WEST", (char*)"Peter Puffin");
+  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"NORTH", (char*)"Room Name");
+  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"EAST", (char*)"Room Name");
+  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"SOUTH", (char*)"Room Name");
 
-  ((*rm)[(char*)"Jin & Out"])->setExit((char*)"NORTH", (char*)"Peter Pan's Clan");
-  ((*rm)[(char*)"Jin & Out"])->setExit((char*)"EAST", (char*)"Peter Jin's Inn");
-  ((*rm)[(char*)"Jin & Out"])->setExit((char*)"SOUTH", (char*)"Peter Jin's Tin Bin");
-  ((*rm)[(char*)"Jin & Out"])->setExit((char*)"WEST", (char*)"Jin & Out Fanbase");
+  ((*rm)[(char*)"The Tsunade Residence"])->setExit((char*)"SOUTH", (char*)"Room Name");
 
-  ((*rm)[(char*)"Peter Jin's Inn"])->setExit((char*)"NORTH", (char*)"Peter Pan's Madame Ma'am");
-  ((*rm)[(char*)"Peter Jin's Inn"])->setExit((char*)"EAST", (char*)"Peter Pan's Dam");
-  ((*rm)[(char*)"Peter Jin's Inn"])->setExit((char*)"SOUTH", (char*)"Peter Jin's LITTI IN MY CITY");
-  ((*rm)[(char*)"Peter Jin's Inn"])->setExit((char*)"WEST", (char*)"Jin & Out");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"NORTH", (char*)"Peter Pan's Madame Ma'am");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"EAST", (char*)"Peter Pan's Dam");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"SOUTH", (char*)"Peter Jin's LITTI IN MY CITY");
+  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"WEST", (char*)"Jin & Out");
 
-  ((*rm)[(char*)"Peter Pan's Dam"])->setExit((char*)"NORTH", (char*)"Peter Jin's North Berlin");
-  ((*rm)[(char*)"Peter Pan's Dam"])->setExit((char*)"WEST", (char*)"Peter Jin's Inn");
-  ((*rm)[(char*)"Peter Pan's Dam"])->setExit((char*)"SOUTH", (char*)"Peter Jin's South Berlin");
+  ((*rm)[(char*)"The Hachikuji Residence"])->setExit((char*)"NORTH", (char*)"Peter Jin's North Berlin");
 
-  ((*rm)[(char*)"Peter Pan's Evil Twin"])->setExit((char*)"EAST", (char*)"Peter Pan's Milk Can");
-  ((*rm)[(char*)"Peter Pan's Evil Twin"])->setExit((char*)"NORTH", (char*)"Peter Puffin");
+  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"EAST", (char*)"Peter Pan's Milk Can");
+  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"SOUTH", (char*)"Peter Puffin");
+  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"WEST", (char*)"Peter Puffin");
 
-  ((*rm)[(char*)"Peter Pan's Milk Can"])->setExit((char*)"EAST", (char*)"Peter Jin's Tin Bin");
-  ((*rm)[(char*)"Peter Pan's Milk Can"])->setExit((char*)"NORTH", (char*)"Jin & Out Fanbase");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"SOUTH", (char*)"Peter Jin's Tin Bin");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"NORTH", (char*)"Jin & Out Fanbase");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"WEST", (char*)"Jin & Out Fanbase");
 
-  ((*rm)[(char*)"Peter Jin's Tin Bin"])->setExit((char*)"EAST", (char*)"Peter Jin's LITTI IN MY CITY");
-  ((*rm)[(char*)"Peter Jin's Tin Bin"])->setExit((char*)"NORTH", (char*)"Jin & Out");
-  ((*rm)[(char*)"Peter Jin's Tin Bin"])->setExit((char*)"WEST", (char*)"Peter Pan's Milk Can");
-
-  ((*rm)[(char*)"Peter Jin's LITTI IN MY CITY"])->setExit((char*)"EAST", (char*)"Peter Jin's South Berlin");
-  ((*rm)[(char*)"Peter Jin's LITTI IN MY CITY"])->setExit((char*)"NORTH", (char*)"Peter Jin's Inn");
-  ((*rm)[(char*)"Peter Jin's LITTI IN MY CITY"])->setExit((char*)"WEST", (char*)"Peter Jin's Tin Bin");
+  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"SOUTH", (char*)"Peter Jin's LITTI IN MY CITY");
+  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"NORTH", (char*)"Jin & Out");
+	
+  ((*rm)[(char*)"The Oikura Residence"])->setExit((char*)"NORTH", (char*)"Peter Jin's Inn");
   
-  ((*rm)[(char*)"Peter Jin's South Berlin"])->setExit((char*)"NORTH", (char*)"Peter Pan's Dam");
-  ((*rm)[(char*)"Peter Jin's South Berlin"])->setExit((char*)"WEST", (char*)"Peter Jin's LITTI IN MY CITY");
-
+  ((*rm)[(char*)"Mister Donut"])->setExit((char*)"SOUTH", (char*)"Peter Pan's Dam");
+	
+  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"NORTH", (char*)"Peter Pan's Dam");
+  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"SOUTH", (char*)"Peter Pan's Dam");
+	
   //Adding all the **starting** items (MANY more items are added as events play out)!
   ((*rm)[(char*)"Peter Jin's Tin Bin"])->addItem((char*)"Peter_Jin's_Safety_Pin");
   
