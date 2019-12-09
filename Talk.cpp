@@ -6,7 +6,7 @@
 #include "Item.h"
 #include "Room.h"
 
-Talk::Talk(char* newDesc, int* newEv) : Command(newDesc){
+Talk::Talk(char* newDescription, int* newEv) : Command(newDescription){
   ev = newEv;
 }
 
