@@ -2,52 +2,43 @@
 #include <cstring>
 #include <vector>
 #include <iterator>
-#include "PickUp.h"
+#include "Grab.h"
 #include "Item.h"
 #include "Room.h"
 
-PickUp::PickUp(char* newDescription) : Command(newDescription)
-{
+Grab::Grab(char* newDesc) : Command(newDesc){
 
 }
 
-int PickUp::getType()
-{
+int Grab::getType(){
   return 4;
 }
 
-char* PickUp::returnBurn()
-{
-  return (char*) "There were no items to grab";
+char* Grab::returnBurn(){
+  return (char*) "Congrats! You grabbed thin air!";
 }
 
-void PickUp::take(Room** currentRoomptr, std::vector<Item*>* bag, char* itemName)
-{
+//Loop through current room items. If the name matches the Item name, create NEW item with desc in player inventory, then DELETE the item from the room.
+void Grab::take(Room** currentRoomptr, vector<Item*>* bag, char* itemName){
   bool found = false;
-  std::vector<Item*>::iterator roomIt;
-  for (roomIt = ((*currentRoomptr)->getItem())->begin(); roomIt != ((*currentRoomptr)->getItem())->end(); )
-  {
-    char* inQ = (*roomIt)->getName();
+  vector<Item*>::iterator rmIt;
+  for(rmIt = ((*currentRoomptr)->getItems())->begin(); rmIt != ((*currentRoomptr)->getItems())->end(); ){
+    char* inQ = (*rmIt)->getName();
     char temp[strlen(inQ)+1] = "";
-    for (int a = 0; a < strlen(inQ); ++a)
-    {
-      temp[a] = tolower(inQ[a]);
+    for(int a = 0; a < strlen(inQ); ++a){
+      temp[a] = toupper(inQ[a]);
     }
-    if (strcmp((char*)temp, itemName) == 0)
-    {
+    if(strcmp((char*)temp, itemName) == 0){
       bag->push_back(new Item(inQ));
-      delete (*roomIt);
-      roomIt = ((*currentRoomptr)->getItem())->erase(roomIt);
-      std::cout << "Received " << inQ << "!" << std::endl;
+      delete (*rmIt);
+      rmIt = ((*currentRoomptr)->getItems())->erase(rmIt);
+      cout << "Received " << inQ << "!" << endl;
       found = true;
-    }
-    else
-    {
-      ++roomIt;
+    }else{
+      ++rmIt;
     }
   }
-  if (found == false)
-  {
-    std::cout << "That isn't an item here" << std::endl;
+  if(found == false){
+    cout << "What are you grabbing at?" << endl;
   }
 }
