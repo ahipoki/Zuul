@@ -204,12 +204,14 @@ int main(){
     int* ev = ((Talk*)(commands.at(5)))->getEv();
     if(currentRoom == (*rm)[(char*)"The Araragi Residence"]){
       if(ev[0] == true){
-	((*rm)[(char*)"The Araragi Residence"])->setDescription((char*)"Peter Pan *was jamming with some songs + dance moves");
+	((*rm)[(char*)"The Araragi Residence"])->setDescription((char*)"This is the home of the Araragi family. It is a yellow three story house.");
 	
-	((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"EAST", (char*)"Peter Pan's Fam");
-        ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Peter Puffin");
+	((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Nanahyakuichi Public Middle School");
+        ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
+	((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Eikou Cram School");
+        ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Namishiro Park");
 
-	((*rm)[(char*)"The Araragi Residence"])->addItem((char*)"Peter's_Jam");
+	//((*rm)[(char*)"The Araragi Residence"])->addItem((char*)"Peter's_Jam");
 	ev[0] = 2;
 	printRoomString(currentRoom);
       }
