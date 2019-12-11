@@ -43,7 +43,8 @@ void printExitString(map<char*, char*>*);
 void printItemString(vector<Item*>*);
 void printRoomString(Room*);
 
-int main(){
+int main()
+{
   char saveInput[80];
   //List of Visited Rooms (for Map)
   vector<char*> encRooms;
@@ -71,7 +72,7 @@ int main(){
   //Storage shed
   buildRoom(rm, (char*)"Convenience Store", (char*)"Convenience");
   //Convenience store
-  buildRoom(rm, (char*)"High School -> The Araragi Residence", (char*)"High School to Araragi House");
+  buildRoom(rm, (char*)"High School -> Araragi House", (char*)"High School to Araragi House");
   //High school to book store
   buildRoom(rm, (char*)"Book Store -> Subway Station", (char*)"Book store to subway station");
   //Book store to subway
@@ -91,39 +92,39 @@ int main(){
   //Adding all the Exits that the game starts out with (more added later in events)
 
   //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Eikou Cram School");
-  //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
+  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Araragi House -> Book Store");
   //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"EAST", (char*)"Namishiro Park");
-  //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Nanahyakuichi Public Middle School");
+  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"High School -> Araragi House");
 
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"NORTH", (char*)"Cram School -> High School");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"SOUTH", (char*)"Cram School -> Storage Shed Hallway");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"EAST", (char*)"Cram School -> Stadium");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"WEST", (char*)"Cram School -> Subway Station");
+  //((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"NORTH", (char*)"Cram School -> High School");
+  //((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"SOUTH", (char*)"Cram School -> Storage Shed Hallway");
+  //((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"EAST", (char*)"Cram School -> Stadium");
+  //((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"WEST", (char*)"Cram School -> Subway Station");
 
-  ((*rm)[(char*)"Subway Station"])->setExit((char*)"SOUTH", (char*)"Book Store -> Subway Station");
-  ((*rm)[(char*)"Subway Station"])->setExit((char*)"EAST", (char*)"Cram School -> Subway Station");
+  //((*rm)[(char*)"Subway Station"])->setExit((char*)"EAST", (char*)"Cram School -> Subway Station");
+  ((*rm)[(char*)"Subway Station"])->setExit((char*)"WEST", (char*)"Book Store -> Subway Station");
 
   //((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"SOUTH", (char*)"Cram School -> High School");
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"EAST", (char*)"High School -> Book Store");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"EAST", (char*)"High School -> Araragi House");
   
   ((*rm)[(char*)"Rooftop"])->setExit((char*)"WEST", (char*)"Storage Shed -> Rooftop");
 
   ((*rm)[(char*)"Tokyo Olympic Stadium"])->setExit((char*)"WEST", (char*)"Cram School -> Stadium");
 
-  ((*rm)[(char*)"Haga Books"])->setExit((char*)"NORTH", (char*)"Book Store -> Subway Station");
-  ((*rm)[(char*)"Haga Books"])->setExit((char*)"SOUTH", (char*)"Book Store -> Convenience Store");
-  ((*rm)[(char*)"Haga Books"])->setExit((char*)"WEST", (char*)"High School -> Book Store");
+  ((*rm)[(char*)"Haga Books"])->setExit((char*)"NORTH", (char*)"Araragi House -> Book Store");
+  //((*rm)[(char*)"Haga Books"])->setExit((char*)"SOUTH", (char*)"Book Store -> Convenience Store");
+  ((*rm)[(char*)"Haga Books"])->setExit((char*)"EAST", (char*)"Book Store -> Subway Station");
 
-  ((*rm)[(char*)"Storage Shed"])->setExit((char*)"NORTH", (char*)"Cram School -> Storage Shed");
+  //((*rm)[(char*)"Storage Shed"])->setExit((char*)"NORTH", (char*)"Cram School -> Storage Shed");
   ((*rm)[(char*)"Storage Shed"])->setExit((char*)"EAST", (char*)"Storage Shed -> Rooftop");
 
-  ((*rm)[(char*)"Convenience Store"])->setExit((char*)"NORTH", (char*)"Book Store -> Convenience Store");
+  //((*rm)[(char*)"Convenience Store"])->setExit((char*)"NORTH", (char*)"Book Store -> Convenience Store");
 
-  ((*rm)[(char*)"High School -> Book Store"])->setExit((char*)"EAST", (char*)"Haruya Book Store");
-  ((*rm)[(char*)"High School -> Book Store"])->setExit((char*)"WEST", (char*)"Naoetsu Private High School");
+  ((*rm)[(char*)"High School -> Araragi House"])->setExit((char*)"EAST", (char*)"The Araragi Residence");
+  ((*rm)[(char*)"High School -> Araragi House"])->setExit((char*)"WEST", (char*)"Naoetsu Private High School");
 
-  ((*rm)[(char*)"Book Store -> Subway Station"])->setExit((char*)"NORTH", (char*)"Subway Station");
-  ((*rm)[(char*)"Book Store -> Subway Station"])->setExit((char*)"SOUTH", (char*)"Haruya Book Store");
+  ((*rm)[(char*)"Book Store -> Subway Station"])->setExit((char*)"EAST", (char*)"Subway Station");
+  ((*rm)[(char*)"Book Store -> Subway Station"])->setExit((char*)"WEST", (char*)"Haga Books");
 
   ((*rm)[(char*)"Cram School -> High School"])->setExit((char*)"NORTH", (char*)"Naoetsu Private High School");
   ((*rm)[(char*)"Cram School -> High School"])->setExit((char*)"SOUTH", (char*)"Eikou Cram School");
@@ -134,23 +135,20 @@ int main(){
   ((*rm)[(char*)"Cram School -> Subway"])->setExit((char*)"EAST", (char*)"Eikou Cram School");
   ((*rm)[(char*)"Cram School -> Subway"])->setExit((char*)"WEST", (char*)"Subway Station");
 	
-  ((*rm)[(char*)"Book Store -> Convenience Store"])->setExit((char*)"NORTH", (char*)"Haruya Book Store");
+  ((*rm)[(char*)"Book Store -> Convenience Store"])->setExit((char*)"NORTH", (char*)"Haga Books");
   ((*rm)[(char*)"Book Store -> Convenience Store"])->setExit((char*)"SOUTH", (char*)"Convenience Store");
 	
   ((*rm)[(char*)"Cram School -> Storage Room"])->setExit((char*)"NORTH", (char*)"Eikou Cram School");
   ((*rm)[(char*)"Cram School -> Storage Room"])->setExit((char*)"SOUTH", (char*)"Storage Shed");
 	
-  ((*rm)[(char*)"Storage Room -> Rooftop"])->setExit((char*)"EAST", (char*)"Rooftop");
-  ((*rm)[(char*)"Storage Room -> Rooftop"])->setExit((char*)"WEST", (char*)"Storage Shed");
+  ((*rm)[(char*)"Storage Shed -> Rooftop"])->setExit((char*)"EAST", (char*)"Rooftop");
+  ((*rm)[(char*)"Storage Shed -> Rooftop"])->setExit((char*)"WEST", (char*)"Storage Shed");
+	
+  ((*rm)[(char*)"Araragi House -> Book Store"])->setExit((char*)"NORTH", (char*)"The Araragi Residence");
+  ((*rm)[(char*)"Araragi House -> Book Store"])->setExit((char*)"SOUTH", (char*)"Haga Books");
 	
   //Adding all the **starting** items (MANY more items are added as events play out)!
-  ((*rm)[(char*)"Haruya Book Store"])->addItem((char*)"Araragi's Definitely Not Erotic Book (BOOK)");
-  //((*rm)[(char*)"E"])->addItem((char*)"Hitagi Senjougahara's Stapler");
-  //((*rm)[(char*)"Namishiro Park"])->addItem((char*)"Mayoi Hachikuji's Backpack");
-  //((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Suruga Kanbaru's Basketball");
-  //((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Nadeko Sengoku's Waist Pouch");
-  //((*rm)[(char*)"Haruya Book Store"])->addItem((char*)"A Study Book for Tsubasa Hanekawa");
-  //((*rm)[(char*)"Mister Donut"])->addItem((char*)"A Donut for Oshino Shinobu");
+  ((*rm)[(char*)"Haga Books"])->addItem((char*)"Araragi's Exciting Magazine");
   
   //Inventory
   vector<Item*> bag;
@@ -178,7 +176,8 @@ int main(){
   commandsptr->push_back(new Drop((char*)"DROP"));
   commandsptr->push_back(new Inventory((char*)"INVENTORY"));
   int* e = new int[15];
-  for(int a = 0; a < 15; ++a){
+  for(int a = 0; a < 15; ++a)
+  {
     e[a] = 0;
   }
   commandsptr->push_back(new Talk((char*)"TALK", e));
@@ -197,19 +196,24 @@ int main(){
   //Print out exits
   //Print out items
   //Then process commands
-  while(running){
+  while(running)
+  {
     //Basically add room to list of visited rooms if it isn't in there already
     vector<char*>::iterator i;
     bool found = false;
-    for(i = encRooms.begin(); i != encRooms.end(); ++i){
-      if(strcmp((*i), currentRoom->getTitle()) == 0){
+    for(i = encRooms.begin(); i != encRooms.end(); ++i)
+    {
+      if(strcmp((*i), currentRoom->getTitle()) == 0)
+      {
 	found = true;
       }
     }
-    if(found == false){
+    if(found == false)
+    {
       encRooms.push_back(currentRoom->getTitle());
     }
-    if(lastRoom != currentRoom){
+    if(lastRoom != currentRoom)
+    {
       printRoomString(currentRoom);
       lastRoom = currentRoom;
     }
@@ -221,36 +225,37 @@ int main(){
     //The basis of activating an event is finding the current room, checking the event array connected to that room, then making another event based off of those qualities
     //The .png map contains all of the event method intents
     int* ev = ((Talk*)(commands.at(5)))->getEv();
-    if(currentRoom == (*rm)[(char*)"Naoetsu Private High School"]){
-      if(ev[0] == true){
+    if(currentRoom == (*rm)[(char*)"Naoetsu Private High School"])
+    {
+      if(ev[0] == true)
+      {
 	((*rm)[(char*)"Naoetsu Private High School"])->setDescription((char*)"This is Naoetsu Private High School, the school that you, Koyomi Araragi, attend as a second year.");
-	
-	//((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Nanahyakuichi Public Middle School");
-        //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
-	//((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Eikou Cram School");
-        //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Namishiro Park");
-
-	//((*rm)[(char*)"The Araragi Residence"])->addItem((char*)"Peter's_Jam");
 	ev[0] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"High School -> Book Store"]){
-      if(ev[1] == true){
+    }
+    else if(currentRoom == (*rm)[(char*)"High School -> Home"])
+    {
+      if(ev[1] == true)
+      {
 	commandsptr->push_back(new Story((char*)"STORY"));
-
-	//((*rm)[(char*)"Eikou Cram School"])->addItem((char*)"Peter_Pan's_SPAM");
 	
 	ev[1] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Haruya Book Store"]){
-      if(ev[2] == true){
-	((*rm)[(char*)"Haruya Book Store"])->addItem((char*)"Araragi's Definitely Not Erotic Book (BOOK)");
+    }
+    else if(currentRoom == (*rm)[(char*)"Haga Books"])
+    {
+      if(ev[2] == true)
+      {
 	ev[2] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Subway Station"]){
-      if(ev[3] == true){
+    }
+    else if(currentRoom == (*rm)[(char*)"Subway Station"])
+    {
+      if(ev[3] == true)
+      {
 	cout << "Do you want to save her?
 	cin.getline(saveInput, 80);
 	for (int i = 0; i < strlen(saveInput); i++)
@@ -268,24 +273,35 @@ int main(){
 	ev[3] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"North Shirahebi Shrine"]){
-      if(ev[4] == true){
+    }
+    else if(currentRoom == (*rm)[(char*)"North Shirahebi Shrine"])
+    {
+      if(ev[4] == true)
+      {
       ((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Peter_Pan's_Ram");
       }
-    }else if(currentRoom == (*rm)[(char*)"The Sengoku Residence"]){
-      if(ev[5] == true){
+    }
+    else if(currentRoom == (*rm)[(char*)"The Sengoku Residence"])
+    {
+      if(ev[5] == true)
+      {
 	vector<Item*>::iterator bagIt;
 	bool finYes = false;
 	bool pinYes = false;
-	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt){
-	  if(strcmp((*bagIt)->getName(), "Peter_Jin's_Fin") == 0){
+	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt)
+	{
+	  if(strcmp((*bagIt)->getName(), "Peter_Jin's_Fin") == 0)
+	  {
 	    finYes = true;
-	  }else if(strcmp((*bagIt)->getName(), "Peter_Jin's_Safety_Pin") == 0){
+	  }
+	  else if(strcmp((*bagIt)->getName(), "Peter_Jin's_Safety_Pin") == 0)
+	  {
 	    pinYes = true;
 	  }
 	}
 	char buffer[999] = "";
-	if(finYes && pinYes){
+	if(finYes && pinYes)
+	{
 	  cout << "Hey, that's my fin! Gimme!" << endl;
 	  cin.get(buffer, 1);
 	  cin.clear();
@@ -308,7 +324,9 @@ int main(){
 
 	  printRoomString(currentRoom);
 	  ev[5] = 2;
-	}else if(finYes && pinYes == false){
+	}
+	else if(finYes && pinYes == false)
+	{
 	  cout << "Hey, that's my fin! Gimme!" << endl;
 	  cin.get(buffer, 1);
 	  cin.clear();
@@ -325,15 +343,18 @@ int main(){
 	  currentRoom = ((*rm)[(char*)"Peter Pan's Jam"]);
 	}
       }
-    }else if(currentRoom == (*rm)[(char*)"The Tsunade Residence"]){
-      if(ev[6] == true){
-	
+    }
+    else if(currentRoom == (*rm)[(char*)"The Tsunade Residence"])
+    {
+      if(ev[6] == true)
+      {
         ((*rm)[(char*)"The Tsunade Residence"])->addItem((char*)"Peter_Pan's_Fan");
-	
 	ev[6] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Tamikura Apartments"]){
+    }
+    else if(currentRoom == (*rm)[(char*)"Tamikura Apartments"])
+    {
       if(ev[7] == true && strcmp(commandstr, "TALK") == 0){
 	vector<Item*>::iterator bagIt;
 	bool yamYes = false;
@@ -628,9 +649,11 @@ void processInput(char* commandstr, char* keywordstr){
     cin.ignore(999, '\n');
     
     if(strlen(in) != 0){
-      for(int a = 0; a < strlen(in); ++a){
-      in[a] = toupper(in[a]);
-        if(in[a] == ' '){
+      for(int a = 0; a < strlen(in); ++a)
+      {
+      	in[a] = toupper(in[a]);
+        if(in[a] == ' ')
+	{
 	  ++spaces;
         }
       }
@@ -715,28 +738,39 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
       case TALK_TYPE:
         if(strcmp(keywordstr,"") == 0){
 	  ((Talk*)(*commandsIt))->act(rm, currentRoomptr, bagptr);
-	}else{
+	}
+	else
+	{
 	  cout << ((Talk*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
       case HELP_TYPE:
-        if(strcmp(keywordstr,"") == 0){
+        if(strcmp(keywordstr,"") == 0)
+	{
 	  ((Help*)(*commandsIt))->printHelp(commands);
-	}else{
+	}
+	else
+	{
 	  cout << ((Help*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
       case STORY_TYPE:
-        if(strcmp(keywordstr,"") == 0){
+        if(strcmp(keywordstr,"") == 0)
+	{
 	  ((Story*)(*commandsIt))->printMap(currentRoomptr, rm, encRoomsptr);
-	}else{
+	}
+	else
+	{
 	  cout << ((Story*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
       case QUIT_TYPE:
-        if(strcmp(keywordstr,"") == 0){
+        if(strcmp(keywordstr,"") == 0)
+	{
 	  ((Quit*)(*commandsIt))->getMeOut();
-	}else{
+	}
+	else
+	{
 	  cout << ((Quit*)(*commandsIt))->returnBurn() << endl;
 	}
 	break;
@@ -746,29 +780,40 @@ void processCommand(char* commandstr, char* keywordstr, vector<Command*>* comman
 }
 
 //Iterates through the exits of a room and prints
-void printExitString(map<char*, char*>* exits){
+void printExitString(map<char*, char*>* exits)
+{
   map<char*, char*>::iterator it;
-  for(it = exits->begin(); it != exits->end(); ++it){
+  for(it = exits->begin(); it != exits->end(); ++it)
+  {//Uses an iterator and goes through the exits
     cout << it->first << " ";
+    //Prints out the exits of the room
   }
   cout << endl;
 }
 
 //Iterates through the items of a room and prints
-void printItemString(vector<Item*>* items){
+void printItemString(vector<Item*>* items)
+{
   vector<Item*>::iterator iIt;
-  for(iIt = items->begin(); iIt != items->end(); ++iIt){
+  for(iIt = items->begin(); iIt != items->end(); ++iIt)
+  {//Uses an iterator and goes through the items in the room
     cout << (*iIt)->getName() << " ";
+    //Prints out the items
   }
   cout << endl;
 }
 
-//A nice package that gives the user all of the needed UI of exits, items, and currentRoom
-void printRoomString(Room* currentRoom){
-  cout << "You are at " << currentRoom->getTitle() << "!" << endl;
+//Gives the user the room's information
+void printRoomString(Room* currentRoom)
+{
+  cout << "You are at " << currentRoom->getTitle() << "." << endl;
+  //Tell the user the room they're in
   cout << currentRoom->getDescription() << endl;
+  //Tell the user the room's description
   cout << "Exits: ";
   printExitString(currentRoom->getExits());
+  //Tell the user the room's current exits
   cout << "Items: ";
   printItemString(currentRoom->getItems());
+  //Tell the user the room's current items
 }
