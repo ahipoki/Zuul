@@ -4,18 +4,22 @@
 
 using namespace std;
 
-Command::Command(char* newDescription){
+Command::Command(char* newDescription)
+{
   description = newDescription;
 }
 
-char* Command::getDescription(){
+char* Command::getDescription()
+{
   return description;
 }
 
-int Command::getType(){
+int Command::getType()
+{
 
 }
 
-char* Command::returnBurn(){
+char* Command::returnBurn()
+{
 
 }
