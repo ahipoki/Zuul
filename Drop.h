@@ -6,12 +6,12 @@
 #include "Item.h"
 #include "Room.h"
 
-class Drop : public Command {
+class Drop : public Command
+{
  public:
   Drop(char*);
   int getType();
   char* returnBurn();
   void toss(Room**, vector<Item*>*, char*);
  private:
-
 };
