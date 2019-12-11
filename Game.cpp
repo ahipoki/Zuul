@@ -44,7 +44,7 @@ void printItemString(vector<Item*>*);
 void printRoomString(Room*);
 
 int main(){
-  
+  char saveInput[80];
   //List of Visited Rooms (for Map)
   vector<char*> encRooms;
   vector<char*>* encRoomsptr = &encRooms;
@@ -54,84 +54,102 @@ int main(){
   
   //Adding all the Rooms! Desc can change with events
   buildRoom(rm, (char*)"The Araragi Residence", (char*)"This is the house of our main character, Koyomi Araragi.");
-  buildRoom(rm, (char*)"Eikou Cram School", (char*)"Peter Pan's Nan is there to cheer you on. It fills you with DETERMINATION.");
-  buildRoom(rm, (char*)"Namishiro Park", (char*)"Peter Pan's former clan is in tears after they heard about Peter Pan's fast departure.");
-  buildRoom(rm, (char*)"Naoetsu Private High School", (char*)"In front of you is a hearty little farm, with a tidy house and a large barn. On the front porch a woman sweeps the floor.");
-  buildRoom(rm, (char*)"North Shirahebi Shrine", (char*)"Tumbleweeds roll over houses and dush-filled wells... But the streets are far from deserted. You come across a gathering of around a hundred people clamoring over something...");
-  buildRoom(rm, (char*)"The Sengoku Residence", (char*)"This is the house of Nadeko Sengoku");
-  buildRoom(rm, (char*)"The Tsunade Residence", (char*)"Out in the distance a big broccoli building with the shape of a fan stands firm on a hill, with so many thousands of people entering in and out of the building that you wonder if your eyes are playing tricks on you. But that's weird. Just a few days ago, wasn't there nothing? You spot a guy cooling himself off with a fan in the corner...");
-  buildRoom(rm, (char*)"Tamikura Apartments", (char*)"A building the size of a skyscraper towers over the middle of a densely populated city. Employees can be seen hurrying from floor to floor through the pristine glass windows. Then you look up, and see a column of black smoke rupturing from the top of the restraunt. A worker in red and yellow runs towards you.");
-  buildRoom(rm, (char*)"The Hachikuji Residence", (char*)"In front of you stands a cozy chest-shaped inn frying buns and flipping prabby catties.");
-  buildRoom(rm, (char*)"The Hanekawa Residence", (char*)"A huge dam divides the two rival kingdoms. But that's weird... There's no water flowing down! Could it be because of the clam flexing its tongue in the middle?");
-  buildRoom(rm, (char*)"Haruya Book Store", (char*)"The evil peanut butter swirls on top of Peter Jin's bread top hat. it's time.");
-  buildRoom(rm, (char*)"Nanahyakuichi Public Middle School", (char*)"But the legends... could it be? You could'nt possibly be at the illusive milk can house of Peter Pan!");
-  buildRoom(rm, (char*)"The Oikura Residence", (char*)"It's literally the basement of Jin & Out... molding burger wrappers and crumpled paper cups pile miles high into every direction... It's like Scrooge mcDuck's vault, except full of junk");
-  buildRoom(rm, (char*)"Mister Donut", (char*)"An entire city seems to almost completely be out of power... except for a flickering lampost illuminating an old man sitting on a blue metal bench, reading a newspaper.");
-  buildRoom(rm, (char*)"The Kanbaru Residence", (char*)"Seaweed rolls over houses and dry cracked wells... But the streets are far from deserted. You come across a gathering of around a hundred people clamoring over something...");
+  //Araragi's house
+  buildRoom(rm, (char*)"Eikou Cram School", (char*)"Cram School.");
+  //Cram School
+  buildRoom(rm, (char*)"Naoetsu Private High School", (char*)"High School");
+  //High School
+  buildRoom(rm, (char*)"Subway Station", (char*)"Subway Station");
+  //Subway station
+  buildRoom(rm, (char*)"Rooftop", (char*)"Rooftop");
+  //Rooftop
+  buildRoom(rm, (char*)"Tokyo Olympic Stadium", (char*)"Stadium");
+  //Stadium
+  buildRoom(rm, (char*)"Haruya Book Store", (char*)"Book Store");
+  //Book store
+  buildRoom(rm, (char*)"Storage Shed", (char*)"Storage shed");
+  //Storage shed
+  buildRoom(rm, (char*)"Convenience Store", (char*)"Convenience");
+  //Convenience store
+  buildRoom(rm, (char*)"High School -> Book Store", (char*)"High School to book store");
+  //High school to book store
+  buildRoom(rm, (char*)"Book Store -> Subway Station", (char*)"Book store to subway station");
+  //Book store to subway
+  buildRoom(rm, (char*)"Cram School -> High School", (char*)"Cram school to high school");
+  //Cram school to high school
+  buildRoom(rm, (char*)"Cram School -> Stadium", (char*)"Cram school to stadium");
+  //Cram school to stadium
+  buildRoom(rm, (char*)"Cram School -> Subway Station", (char*)"Cram school to subway station");
+  //Cram school to subway
+  buildRoom(rm, (char*)"Book Store -> Convenience Store", (char*)"Book store to convenience store");
+  //Book store to convenience store
+  buildRoom(rm, (char*)"Cram School -> Storage Shed", (char*)"Cram school to storage shed");
+  //Cram school to storage shed
+  buildRoom(rm, (char*)"Storage Shed -> Rooftop", (char*)"Storage shed to roof");
+  //Storage shed to rooftop
   //Adding all the Exits that the game starts out with (more added later in events)
 
-  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Eikou Cram School");
-  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
-  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"EAST", (char*)"Namishiro Park");
-  ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Nanahyakuichi Public Middle School");
+  //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Eikou Cram School");
+  //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
+  //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"EAST", (char*)"Namishiro Park");
+  //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Nanahyakuichi Public Middle School");
 
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"EAST", (char*)"The Araragi Residence");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"SOUTH", (char*)"The Kanbaru Residence");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"WEST", (char*)"The Hanekawa Residence");
-  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"NORTH", (char*)"Tamikura Apartments");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"NORTH", (char*)"Cram School -> High School");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"SOUTH", (char*)"Cram School -> Storage Shed Hallway");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"EAST", (char*)"Cram School -> Stadium");
+  ((*rm)[(char*)"Eikou Cram School"])->setExit((char*)"WEST", (char*)"Cram School -> Subway Station");
 
-  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"EAST", (char*)"Tamikura Apartments");
-  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"SOUTH", (char*)"The Hachikuji Residence");
-  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"WEST", (char*)"The Araragi Residence");
-  ((*rm)[(char*)"Namishiro Park"])->setExit((char*)"NORTH", (char*)"The Tsunade Residence");
+  ((*rm)[(char*)"Subway Station"])->setExit((char*)"SOUTH", (char*)"Book Store -> Subway Station");
+  ((*rm)[(char*)"Subway Station"])->setExit((char*)"EAST", (char*)"Cram School -> Subway Station");
 
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"NORTH", (char*)"The Araragi Residence");
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"SOUTH", (char*)"The Oikura Residence");
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"EAST", (char*)"The Hanekawa Residence");
-  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"WEST", (char*)"Tamikura Apartments");
+  //((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"SOUTH", (char*)"Cram School -> High School");
+  ((*rm)[(char*)"Naoetsu Private High School"])->setExit((char*)"EAST", (char*)"High School -> Book Store");
   
-  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"NORTH", (char*)"The Kanbaru Residence");
-  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"EAST", (char*)"Haruya Book Store");
-  ((*rm)[(char*)"North Shirahebi Shrine"])->setExit((char*)"WEST", (char*)"The Sengoku Residence");
+  ((*rm)[(char*)"Rooftop"])->setExit((char*)"WEST", (char*)"Storage Shed -> Rooftop");
 
-  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"NORTH", (char*)"Haruya Book Store");
-  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"EAST", (char*)"North Shirahebi Shrine");
-  ((*rm)[(char*)"The Sengoku Residence"])->setExit((char*)"SOUTH", (char*)"Nanahyakuichi Public Middle School");
+  ((*rm)[(char*)"Tokyo Olympic Stadium"])->setExit((char*)"WEST", (char*)"Cram School -> Stadium");
 
-  ((*rm)[(char*)"The Tsunade Residence"])->setExit((char*)"SOUTH", (char*)"Namishiro Park");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"NORTH", (char*)"Book Store -> Subway Station");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"SOUTH", (char*)"Book Store -> Convenience Store");
+  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"WEST", (char*)"High School -> Book Store");
 
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"NORTH", (char*)"The Hanekawa Residence");
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"EAST", (char*)"Naoetsu Private High School");
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"SOUTH", (char*)"Eikou Cram School");
-  ((*rm)[(char*)"Tamikura Apartments"])->setExit((char*)"WEST", (char*)"Namishiro Park");
+  ((*rm)[(char*)"Storage Shed"])->setExit((char*)"NORTH", (char*)"Cram School -> Storage Shed");
+  ((*rm)[(char*)"Storage Shed"])->setExit((char*)"EAST", (char*)"Storage Shed -> Rooftop");
 
-  ((*rm)[(char*)"The Hachikuji Residence"])->setExit((char*)"NORTH", (char*)"Namishiro Park");
+  ((*rm)[(char*)"Convenience Store"])->setExit((char*)"NORTH", (char*)"Book Store -> Convenience Store");
 
-  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"EAST", (char*)"Eikou Cram School");
-  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"SOUTH", (char*)"Tamikura Apartments");
-  ((*rm)[(char*)"The Hanekawa Residence"])->setExit((char*)"WEST", (char*)"Naoetsu Private High School");
+  ((*rm)[(char*)"High School -> Book Store"])->setExit((char*)"EAST", (char*)"Haruya Book Store");
+  ((*rm)[(char*)"High School -> Book Store"])->setExit((char*)"WEST", (char*)"Naoetsu Private High School");
 
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"SOUTH", (char*)"The Sengoku Residence");
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"NORTH", (char*)"Mister Donut");
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"WEST", (char*)"North Shirahebi Shrine");
+  ((*rm)[(char*)"Book Store -> Subway Station"])->setExit((char*)"NORTH", (char*)"Subway Station");
+  ((*rm)[(char*)"Book Store -> Subway Station"])->setExit((char*)"SOUTH", (char*)"Haruya Book Store");
 
-  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"SOUTH", (char*)"The Araragi Residence");
-  ((*rm)[(char*)"Nanahyakuichi Public Middle School"])->setExit((char*)"NORTH", (char*)"The Sengoku Residence");
+  ((*rm)[(char*)"Cram School -> High School"])->setExit((char*)"NORTH", (char*)"Naoetsu Private High School");
+  ((*rm)[(char*)"Cram School -> High School"])->setExit((char*)"SOUTH", (char*)"Eikou Cram School");
 	
-  ((*rm)[(char*)"The Oikura Residence"])->setExit((char*)"NORTH", (char*)"Naoetsu Private High School");
+  ((*rm)[(char*)"Cram School -> Stadium"])->setExit((char*)"EAST", (char*)"Tokyo Olympic Stadium");
+  ((*rm)[(char*)"Cram School -> Stadium"])->setExit((char*)"WEST", (char*)"Eikou Cram School");
   
-  ((*rm)[(char*)"Mister Donut"])->setExit((char*)"SOUTH", (char*)"Haruya Book Store");
+  ((*rm)[(char*)"Cram School -> Subway"])->setExit((char*)"EAST", (char*)"Eikou Cram School");
+  ((*rm)[(char*)"Cram School -> Subway"])->setExit((char*)"WEST", (char*)"Subway Station");
 	
-  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"NORTH", (char*)"Eikou Cram School");
-  ((*rm)[(char*)"The Kanbaru Residence"])->setExit((char*)"SOUTH", (char*)"North Shirahebi Shrine");
+  ((*rm)[(char*)"Book Store -> Convenience Store"])->setExit((char*)"NORTH", (char*)"Haruya Book Store");
+  ((*rm)[(char*)"Book Store -> Convenience Store"])->setExit((char*)"SOUTH", (char*)"Convenience Store");
+	
+  ((*rm)[(char*)"Cram School -> Storage Room"])->setExit((char*)"NORTH", (char*)"Eikou Cram School");
+  ((*rm)[(char*)"Cram School -> Storage Room"])->setExit((char*)"SOUTH", (char*)"Storage Shed");
+	
+  ((*rm)[(char*)"Storage Room -> Rooftop"])->setExit((char*)"EAST", (char*)"Rooftop");
+  ((*rm)[(char*)"Storage Room -> Rooftop"])->setExit((char*)"WEST", (char*)"Storage Shed");
 	
   //Adding all the **starting** items (MANY more items are added as events play out)!
-  ((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Hitagi Senjougahara's Stapler");
-  ((*rm)[(char*)"Namishiro Park"])->addItem((char*)"Mayoi Hachikuji's Backpack");
-  ((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Suruga Kanbaru's Basketball");
-  ((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Nadeko Sengoku's Waist Pouch");
-  ((*rm)[(char*)"Eikou Cram School"])->addItem((char*)"A Study Book for Tsubasa Hanekawa");
-  ((*rm)[(char*)"Mister Donut"])->addItem((char*)"A Donut for Oshino Shinobu");
+  ((*rm)[(char*)"Haruya Book Store"])->addItem((char*)"Araragi's Definitely Not Erotic Book (BOOK)");
+  //((*rm)[(char*)"E"])->addItem((char*)"Hitagi Senjougahara's Stapler");
+  //((*rm)[(char*)"Namishiro Park"])->addItem((char*)"Mayoi Hachikuji's Backpack");
+  //((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Suruga Kanbaru's Basketball");
+  //((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Nadeko Sengoku's Waist Pouch");
+  //((*rm)[(char*)"Haruya Book Store"])->addItem((char*)"A Study Book for Tsubasa Hanekawa");
+  //((*rm)[(char*)"Mister Donut"])->addItem((char*)"A Donut for Oshino Shinobu");
   
   //Inventory
   vector<Item*> bag;
@@ -144,7 +162,7 @@ int main(){
   //Current Room
   Room* currentRoom;
   Room** currentRoomptr = &currentRoom;
-  Room* lastRoom = ((*rm)[(char*)"Mister Donut"]);
+  Room* lastRoom = ((*rm)[(char*)"Rooftop"]);
   
   //Command string and Keyword string
   char commandsarr[99];
@@ -168,9 +186,9 @@ int main(){
   //Setting running and current room to prepare for game start
   bool running = true;
   
-  currentRoom = ((*rm)[(char*)"The Araragi Residence"]);
+  currentRoom = ((*rm)[(char*)"Naoetsu Private High School"]);
 
-  cout << "Welcome to my Zuul project." << endl; 
+  cout << "Welcome to my adaptation of Kizumonogatari as a Zuul game." << endl; 
   
   printRoomString(currentRoom);
   
@@ -202,105 +220,56 @@ int main(){
     //The basis of activating an event is finding the current room, checking the event array connected to that room, then making another event based off of those qualities
     //The .png map contains all of the event method intents
     int* ev = ((Talk*)(commands.at(5)))->getEv();
-    if(currentRoom == (*rm)[(char*)"The Araragi Residence"]){
+    if(currentRoom == (*rm)[(char*)"Naoetsu Private High School"]){
       if(ev[0] == true){
-	((*rm)[(char*)"The Araragi Residence"])->setDescription((char*)"This is the home of the Araragi family. It is a yellow three story house.");
+	((*rm)[(char*)"Naoetsu Private High School"])->setDescription((char*)"This is Naoetsu Private High School, the school that you, Koyomi Araragi, attend as a second year.");
 	
-	((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Nanahyakuichi Public Middle School");
-        ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
-	((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Eikou Cram School");
-        ((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Namishiro Park");
+	//((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Nanahyakuichi Public Middle School");
+        //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"SOUTH", (char*)"Naoetsu Private High School");
+	//((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Eikou Cram School");
+        //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"WEST", (char*)"Namishiro Park");
 
 	//((*rm)[(char*)"The Araragi Residence"])->addItem((char*)"Peter's_Jam");
 	ev[0] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Eikou Cram School"]){
+    }else if(currentRoom == (*rm)[(char*)"High School -> Book Store"]){
       if(ev[1] == true){
 	commandsptr->push_back(new Story((char*)"STORY"));
 
-	((*rm)[(char*)"Eikou Cram School"])->addItem((char*)"Peter_Pan's_SPAM");
+	//((*rm)[(char*)"Eikou Cram School"])->addItem((char*)"Peter_Pan's_SPAM");
 	
 	ev[1] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Namishiro Park"]){
+    }else if(currentRoom == (*rm)[(char*)"Haruya Book Store"]){
       if(ev[2] == true){
-	((*rm)[(char*)"Namishiro Park"])->addItem((char*)"Peter_Pan's_Saucepan");
+	((*rm)[(char*)"Haruya Book Store"])->addItem((char*)"Araragi's Definitely Not Erotic Book (BOOK)");
 	ev[2] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Naoetsu Private High School"]){
+    }else if(currentRoom == (*rm)[(char*)"Subway Station"]){
       if(ev[3] == true){
-	((*rm)[(char*)"Naoetsu Private High School"])->addItem((char*)"Peter_Pan's_Yam");
+	cout << "Do you want to save her?
+	cin.getline(saveInput, 80);
+	for (int i = 0; i < strlen(saveInput); i++)
+	{
+	  saveInput[i] = tolower(saveInput);
+	}
+	if (strcmp(saveInput, "yes")
+	{
+	  //Save her    
+	}
+	else if (strcmp(saveInput, "no")
+	{
+	  //Force the player to save her	 
+	}
 	ev[3] = 2;
 	printRoomString(currentRoom);
       }
     }else if(currentRoom == (*rm)[(char*)"North Shirahebi Shrine"]){
-      if(ev[4] == true && strcmp(commandstr, "TALK") == 0){
-	vector<Item*>::iterator bagIt;
-	bool friesYes = false;
-	bool burgerYes = false;
-	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt){
-	  if(strcmp((*bagIt)->getName(), "Jin&Out_Burger") == 0){
-	    burgerYes = true;
-	    break;
-	  }else if(strcmp((*bagIt)->getName(), "Jin&Out_Fries") == 0){
-	    friesYes = true;
-	    break;
-	  }
-	}
-	if(burgerYes || friesYes){
-	  cout << "Looks like you could prevent the conflict with some food!" << endl;
-	  if(burgerYes){
-	    cout << "Offer Jin & Out Burger? (y/n)" << endl;
-	  }else{
-	    cout << "Offer Jin & Out Fries? (y/n)" << endl;
-	  }
-
-	  char buffer[3] = "";
-	  
-      	  cin.get(buffer, 3);
-	  cin.clear();
-	  cin.ignore(999, '\n');
-
-	  buffer[0] = toupper(buffer[0]);
-	  
-	  if(buffer[0] == 'Y' && strlen(buffer) == 1){
-	    for(bagIt = bag.begin(); bagIt != bag.end(); ){
-	      if(burgerYes){
-		if(strcmp((*bagIt)->getName(), "Jin&Out_Burger") == 0){
-	          delete (*bagIt);
-		  bagIt = bag.erase(bagIt);
-		}else{
-		  ++bagIt;
-		}
-	      }else{
-		if(strcmp((*bagIt)->getName(), "Jin&Out_Fries") == 0){
-	          delete (*bagIt);
-		  bagIt = bag.erase(bagIt);
-		}else{
-		  ++bagIt;
-		}
-	      }
-	    }
-	    ((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Peter_Pan's_Ram");
-
-	    if(burgerYes){
-	      cout << "The moment you pull out the burger, the lamb is instantly forgotten about, and the mob nearly rolls you over to get their hands on the burger. Satisfied, the mosh pit then slides south down the hill like the avalanche from a storm. All that's left is a ram. Wait, it wasn't a lamb?" << endl;
-	    }else{
-	      cout << "The moment you pull out the fries, the lamb is instantly forgotten about, and the mob nearly rolls you over to get their hands on the burger. Satisfied, the mosh pit then slides south down the hill like the avalanche from a storm. All that's left is a ram. Wait, it wasn't a lamb?" << endl;
-	    }
-	     
-	    
-	    ((*rm)[(char*)"Peter Jin's North Berlin"])->setDescription((char*)"Tumbleweeds roll over houses and dush-filled wells... But the streets are far from deserted. Just recently, a gathering of around a hundred people stormed south, leaving footprints randomly plastered about the ground...");
-	    
-	    ev[4] = 2;
-	    printRoomString(currentRoom);
-	  }else{
-	    cout << "You decide to bide your time and wait for the oppurtune moment. Wait, did the cook just roll in a cast iron pot?" << endl;
-	  }
-	}
+      if(ev[4] == true){
+      ((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Peter_Pan's_Ram");
       }
     }else if(currentRoom == (*rm)[(char*)"The Sengoku Residence"]){
       if(ev[5] == true){
