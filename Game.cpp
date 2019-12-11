@@ -65,13 +65,13 @@ int main(){
   //Rooftop
   buildRoom(rm, (char*)"Tokyo Olympic Stadium", (char*)"Stadium");
   //Stadium
-  buildRoom(rm, (char*)"Haruya Book Store", (char*)"Book Store");
+  buildRoom(rm, (char*)"Haga Books", (char*)"Book Store");
   //Book store
   buildRoom(rm, (char*)"Storage Shed", (char*)"Storage shed");
   //Storage shed
   buildRoom(rm, (char*)"Convenience Store", (char*)"Convenience");
   //Convenience store
-  buildRoom(rm, (char*)"High School -> Book Store", (char*)"High School to book store");
+  buildRoom(rm, (char*)"High School -> The Araragi Residence", (char*)"High School to Araragi House");
   //High school to book store
   buildRoom(rm, (char*)"Book Store -> Subway Station", (char*)"Book store to subway station");
   //Book store to subway
@@ -87,6 +87,7 @@ int main(){
   //Cram school to storage shed
   buildRoom(rm, (char*)"Storage Shed -> Rooftop", (char*)"Storage shed to roof");
   //Storage shed to rooftop
+  buildRoom(rm, (char*)"Araragi House -> Book Store", (char*)"Araragi's house to book store");
   //Adding all the Exits that the game starts out with (more added later in events)
 
   //((*rm)[(char*)"The Araragi Residence"])->setExit((char*)"NORTH", (char*)"Eikou Cram School");
@@ -109,9 +110,9 @@ int main(){
 
   ((*rm)[(char*)"Tokyo Olympic Stadium"])->setExit((char*)"WEST", (char*)"Cram School -> Stadium");
 
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"NORTH", (char*)"Book Store -> Subway Station");
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"SOUTH", (char*)"Book Store -> Convenience Store");
-  ((*rm)[(char*)"Haruya Book Store"])->setExit((char*)"WEST", (char*)"High School -> Book Store");
+  ((*rm)[(char*)"Haga Books"])->setExit((char*)"NORTH", (char*)"Book Store -> Subway Station");
+  ((*rm)[(char*)"Haga Books"])->setExit((char*)"SOUTH", (char*)"Book Store -> Convenience Store");
+  ((*rm)[(char*)"Haga Books"])->setExit((char*)"WEST", (char*)"High School -> Book Store");
 
   ((*rm)[(char*)"Storage Shed"])->setExit((char*)"NORTH", (char*)"Cram School -> Storage Shed");
   ((*rm)[(char*)"Storage Shed"])->setExit((char*)"EAST", (char*)"Storage Shed -> Rooftop");
