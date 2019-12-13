@@ -4,9 +4,10 @@
 #include "Command.h"
 #include "Item.h"
 
-class Sack : public Command {
+class Inventory : public Command
+{
  public:
-  Sack(char*);
+  Inventory(char*);
   int getType();
   char* returnBurn(char*);
   void show(vector<Item*>*);
