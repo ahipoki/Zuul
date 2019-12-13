@@ -164,9 +164,9 @@ int main()
   Room* lastRoom = ((*rm)[(char*)"Rooftop"]);
   
   //Command string and Keyword string
-  char commandsarr[99];
+  char commandsarr[80];
   char* commandstr = commandsarr;
-  char keywordsarr[99];
+  char keywordsarr[80];
   char* keywordstr = keywordsarr;
   
   //Initiating **starting** commands (more added later in events)
@@ -175,8 +175,8 @@ int main()
   commandsptr->push_back(new PickUp((char*)"GRAB"));
   commandsptr->push_back(new Drop((char*)"DROP"));
   commandsptr->push_back(new Inventory((char*)"INVENTORY"));
-  int* e = new int[15];
-  for(int a = 0; a < 15; ++a)
+  int* e = new int[18];
+  for(int a = 0; a < 18; ++a)
   {
     e[a] = 0;
   }
@@ -224,66 +224,52 @@ int main()
     //We take the ev array that is stored in Talk to do all manner of events
     //The basis of activating an event is finding the current room, checking the event array connected to that room, then making another event based off of those qualities
     //The .png map contains all of the event method intents
-    int* ev = ((Talk*)(commands.at(5)))->getEv();
+    int* event = ((Talk*)(commands.at(5)))->getEvent();
     if(currentRoom == (*rm)[(char*)"Naoetsu Private High School"])
     {
-      if(ev[0] == true)
+      if(event[0] == true)
       {
 	((*rm)[(char*)"Naoetsu Private High School"])->setDescription((char*)"This is Naoetsu Private High School, the school that you, Koyomi Araragi, attend as a second year.");
-	ev[0] = 2;
+	event[0] = 2;
 	printRoomString(currentRoom);
       }
     }
     else if(currentRoom == (*rm)[(char*)"High School -> Home"])
     {
-      if(ev[1] == true)
+      if(event[1] == true)
       {
 	commandsptr->push_back(new Story((char*)"STORY"));
 	
-	ev[1] = 2;
+	event[1] = 2;
 	printRoomString(currentRoom);
       }
     }
     else if(currentRoom == (*rm)[(char*)"Haga Books"])
     {
-      if(ev[2] == true)
+      if(event[2] == true)
       {
-	ev[2] = 2;
+	event[2] = 2;
 	printRoomString(currentRoom);
       }
     }
     else if(currentRoom == (*rm)[(char*)"Subway Station"])
     {
-      if(ev[3] == true)
+      if(event[3] == true)
       {
-	cout << "Do you want to save her?
-	cin.getline(saveInput, 80);
-	for (int i = 0; i < strlen(saveInput); i++)
-	{
-	  saveInput[i] = tolower(saveInput);
-	}
-	if (strcmp(saveInput, "yes")
-	{
-	  //Save her    
-	}
-	else if (strcmp(saveInput, "no")
-	{
-	  //Force the player to save her	 
-	}
-	ev[3] = 2;
+	event[3] = 2;
 	printRoomString(currentRoom);
       }
     }
     else if(currentRoom == (*rm)[(char*)"North Shirahebi Shrine"])
     {
-      if(ev[4] == true)
+      if(event[4] == true)
       {
-      ((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Peter_Pan's_Ram");
+	((*rm)[(char*)"North Shirahebi Shrine"])->addItem((char*)"Peter_Pan's_Ram");
       }
     }
     else if(currentRoom == (*rm)[(char*)"The Sengoku Residence"])
     {
-      if(ev[5] == true)
+      if(event[5] == true)
       {
 	vector<Item*>::iterator bagIt;
 	bool finYes = false;
@@ -299,7 +285,7 @@ int main()
 	    pinYes = true;
 	  }
 	}
-	char buffer[999] = "";
+	char buffer[80];
 	if(finYes && pinYes)
 	{
 	  cout << "Hey, that's my fin! Gimme!" << endl;
@@ -323,7 +309,7 @@ int main()
           ((*rm)[(char*)"Peter Puffin"])->addItem((char*)"Peter_Jin's_Mandarin");
 
 	  printRoomString(currentRoom);
-	  ev[5] = 2;
+	  event[5] = 2;
 	}
 	else if(finYes && pinYes == false)
 	{
@@ -346,31 +332,37 @@ int main()
     }
     else if(currentRoom == (*rm)[(char*)"The Tsunade Residence"])
     {
-      if(ev[6] == true)
+      if(event[6] == true)
       {
         ((*rm)[(char*)"The Tsunade Residence"])->addItem((char*)"Peter_Pan's_Fan");
-	ev[6] = 2;
+	event[6] = 2;
 	printRoomString(currentRoom);
       }
     }
     else if(currentRoom == (*rm)[(char*)"Tamikura Apartments"])
     {
-      if(ev[7] == true && strcmp(commandstr, "TALK") == 0){
+      if(event[7] == true && strcmp(commandstr, "TALK") == 0)
+      {
 	vector<Item*>::iterator bagIt;
 	bool yamYes = false;
 	bool spamYes = false;
-	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt){
-	  if(strcmp((*bagIt)->getName(), "Peter_Pan's_Yam") == 0){
+	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt)
+	{
+	  if(strcmp((*bagIt)->getName(), "Peter_Pan's_Yam") == 0)
+	  {
 	    yamYes = true;
-	  }else if(strcmp((*bagIt)->getName(), "Peter_Pan's_SPAM") == 0){
+	  }
+	  else if(strcmp((*bagIt)->getName(), "Peter_Pan's_SPAM") == 0)
+	  {
 	    spamYes = true;
 	  }
 	}
-	if(yamYes && spamYes){
+	if(yamYes && spamYes)
+	{
 	  cout << "Whoa, you have both! Could I take these to the kitchen? I'll pay you back a portion of this in fast food!" << endl;
 	  cout << "Give Yam and Spam? (y/n)" << endl;
 
-	  char buffer[3] = "";
+	  char buffer[3];
 	  
       	  cin.get(buffer, 3);
 	  cin.clear();
@@ -378,15 +370,22 @@ int main()
 
 	  buffer[0] = toupper(buffer[0]);
 	  
-	  if(buffer[0] == 'Y' && strlen(buffer) == 1){
-	    for(bagIt = bag.begin(); bagIt != bag.end(); ){
-	      if(strcmp((*bagIt)->getName(), "Peter_Pan's_Yam") == 0){
+	  if(buffer[0] == 'Y' && strlen(buffer) == 1)
+	  {
+	    for(bagIt = bag.begin(); bagIt != bag.end(); )
+	    {
+	      if(strcmp((*bagIt)->getName(), "Peter_Pan's_Yam") == 0)
+	      {
 	        delete (*bagIt);
 		bagIt = bag.erase(bagIt);
-	      }else if(strcmp((*bagIt)->getName(), "Peter_Pan's_SPAM") == 0){
+	      }
+	      else if(strcmp((*bagIt)->getName(), "Peter_Pan's_SPAM") == 0)
+	      {
 	        delete (*bagIt);
 		bagIt = bag.erase(bagIt);
-	      }else{
+	      }
+	      else
+	      {
 		++bagIt;
 	      }
 	    }
@@ -395,32 +394,41 @@ int main()
 
 	    ((*rm)[(char*)"Jin & Out"])->setDescription((char*)"A building the size of a skyscraper towers over the middle of a densely populated city. Employees can be seen hurrying from floor to floor through the pristine glass windows. Then you look up, and no longer see a column of smoke erupting from the building.");
 	    
-	    ev[7] = 2;
+	    event[7] = 2;
 	    printRoomString(currentRoom);
-	  }else{
+	  }
+	  else
+	  {
 	    cout << "Oh that's too bad then...(The smoke continues to pour from the tower)" << endl;
 	  }
 	}
       }
-    }else if(currentRoom == (*rm)[(char*)"The Hachikuji Residence"]){
-      if(ev[8] == true){
+    }
+    else if(currentRoom == (*rm)[(char*)"The Hachikuji Residence"])
+    {
+      if(event[8] == true)
+      {
 	((*rm)[(char*)"Peter Jin's Inn"])->addItem((char*)"Peter_Jin's_Fin");
-	ev[8] = 2;
+	event[8] = 2;
 	printRoomString(currentRoom);
-      }else if(ev[8] == 2){
-	char buffer [999] = "";
+      }
+      else if(event[8] == 2)
+      {
+	char buffer [80];
 	vector<Item*>::iterator bagIt;
 	bool mandYes = false;
-	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt){
-	  if(strcmp((*bagIt)->getName(), "Peter_Jin's_Mandarin") == 0){
+	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt)
+	{
+	  if(strcmp((*bagIt)->getName(), "Peter_Jin's_Mandarin") == 0)
+	  {
 	    mandYes = true;
 	    delete (*bagIt);
 	    bagIt = bag.erase(bagIt);
 	    break;
 	  }
 	}
-
-	if(mandYes){
+	if(mandYes)
+	{
 	  cout << "(Mr.sbarK is drawn out into the dining area by a citrus odor)" << endl;
 	  cin.get(buffer, 1);
 	  cin.clear();
@@ -442,13 +450,17 @@ int main()
 	  cin.clear();
 	  cin.ignore(999,'\n');
           cout << "Mr.sbarK has joined the party!" << endl;
-	  ev[8] = 3;
+	  event[8] = 3;
 	}
       }
-    }else if(currentRoom == (*rm)[(char*)"The Hanekawa Residenece"]){
-      if(ev[9] == true && strcmp(commandstr, "TALK") == 0){
-	if(ev[4] == 2 && ev[14] == 2){
-	  char scrollText[999] = "";
+    }
+    else if(currentRoom == (*rm)[(char*)"The Hanekawa Residenece"])
+    {
+      if(event[9] == true && strcmp(commandstr, "TALK") == 0)
+      {
+	if(event[4] == 2 && event[14] == 2)
+	{
+	  char scrollText[80];
 	  cout << "Huehuehuehuehuehu--" << endl;
 	  cin.get(scrollText,1);
 	  cin.clear();
@@ -463,12 +475,12 @@ int main()
 	  cin.ignore(999, '\n');
 	  cout << "Clam and human were flushed down the river...(safely), and a flickering could be heard in the distance..." << endl;
 	  //Berlin
-	  ev[4] = 3;
-	  ev[14] = 3;
+	  event[4] = 3;
+	  event[14] = 3;
 	  //Dam
-	  ev[9] = 2;
+	  event[9] = 2;
 	  //LITTI CITY
-	  ev[13] = 2;
+	  event[13] = 2;
 
 	  ((*rm)[(char*)"Peter Pan's Dam"])->setDescription((char*)"Birds chirp and fish splash as the water flows through the dam, as smooth as silk!");
 
@@ -477,36 +489,50 @@ int main()
 	  printRoomString(currentRoom);
         }
       }
-    }else if(currentRoom == (*rm)[(char*)"Haruya Book Store"]){
-      if(ev[10] == true){
-	ev[10] = 2;
+    }
+    else if(currentRoom == (*rm)[(char*)"Haruya Book Store"])
+    {
+      if(event[10] == true)
+      {
+	event[10] = 2;
 	printRoomString(currentRoom);
       }
-    }else if(currentRoom == (*rm)[(char*)"Nanahyakuichi Public Middle School"]){
-      if(ev[11] == true){
-	char scrollText [999] = "";
+    }
+    else if(currentRoom == (*rm)[(char*)"Nanahyakuichi Public Middle School"])
+    {
+      if(event[11] == true)
+      {
+	char scrollText [80];
 	vector<Item*>::iterator bagIt;
 	bool ramYes = false;
 	bool lambYes = false;
 	bool fanYes = false;
 	bool panYes = false;
-	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt){
-	  if(strcmp((*bagIt)->getName(), "Peter_Pan's_Ram") == 0){
+	for(bagIt = bag.begin(); bagIt != bag.end(); ++bagIt)
+	{
+	  if(strcmp((*bagIt)->getName(), "Peter_Pan's_Ram") == 0)
+	  {
 	    ramYes = true;
-	  }else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Lamb") == 0){
+	  }
+	  else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Lamb") == 0)
+	  {
 	    lambYes = true;
-	  }else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Fan") == 0){
+	  }
+	  else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Fan") == 0)
+	  {
 	    fanYes = true;
-	  }else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Saucepan") == 0){
+	  }
+	  else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Saucepan") == 0)
+	  {
 	    panYes = true;
 	  }
 	}
-
-        if(ramYes && lambYes && fanYes && panYes && ev[8]==3){
+        if(ramYes && lambYes && fanYes && panYes && event[8]==3)
+	{
 	  cout << "You have all the requirements to begin cooking!" << endl;
 	  cout << "Start? (y/n)" << endl;
 
-	  char buffer[3] = "";
+	  char buffer[3];
 	  
       	  cin.get(buffer, 3);
 	  cin.clear();
@@ -514,12 +540,17 @@ int main()
 
 	  buffer[0] = toupper(buffer[0]);
 	  
-	  if(buffer[0] == 'Y' && strlen(buffer) == 1){
-	    for(bagIt = bag.begin(); bagIt != bag.end(); ){
-	      if(strcmp((*bagIt)->getName(), "Peter_Pan's_Ram") == 0){
+	  if(buffer[0] == 'Y' && strlen(buffer) == 1)
+	  {
+	    for(bagIt = bag.begin(); bagIt != bag.end(); )
+	    {
+	      if(strcmp((*bagIt)->getName(), "Peter_Pan's_Ram") == 0)
+	      {
 	        delete (*bagIt);
 		bagIt = bag.erase(bagIt);
-	      }else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Lamb") == 0){
+	      }
+	      else if(strcmp((*bagIt)->getName(), "Peter_Pan's_Lamb") == 0)
+	      {
 	        delete (*bagIt);
 		bagIt = bag.erase(bagIt);
 	      }else if(strcmp((*bagIt)->getName(), "Peter_Jin's_Fan") == 0){
@@ -532,7 +563,7 @@ int main()
 		++bagIt;
 	      }
 	    }
-	  ev[11] = 2;
+	  event[11] = 2;
 	  cout << "Mr.sbarK helps you put the saucepan on the stove..." << endl;
 	  cin.get(scrollText, 1);
 	  cin.clear();
@@ -557,16 +588,16 @@ int main()
 	  }
       }
     }else if(currentRoom == (*rm)[(char*)"The Oikura Residence"]){
-      if(ev[12] == true){
-	ev[12] = 2;
+      if(event[12] == true){
+	event[12] = 2;
 	printRoomString(currentRoom);
       }
     }else if(currentRoom == (*rm)[(char*)"Mister Donut"]){
-      if(ev[13] == 2){
+      if(event[13] == 2){
 	printRoomString(currentRoom);
       }
     }else if(currentRoom == (*rm)[(char*)"The Kanbaru Residence"]){
-      if(ev[14] == true && strcmp(commandstr, "TALK") == 0){
+      if(event[14] == true && strcmp(commandstr, "TALK") == 0){
 	vector<Item*>::iterator bagIt;
 	bool friesYes = false;
 	bool burgerYes = false;
@@ -622,7 +653,7 @@ int main()
 	    }
 	    
 	    ((*rm)[(char*)"Peter Jin's South Berlin"])->setDescription((char*)"Seaweed rolls over houses and dry cracked wells... But the streets are far from deserted. Just recently, a gathering of around a hundred people stormed south, leaving footprints randomly plastered about the ground...");
-	    ev[14] = 2;
+	    event[14] = 2;
 	    printRoomString(currentRoom);
 	  }else{
 	    cout << "You decide to bide your time and wait for the oppurtune moment. Wait, did the cook just bring in salt and pepper shakers? And some ketchup?" << endl;
