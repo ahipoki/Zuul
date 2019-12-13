@@ -4,6 +4,11 @@
 
 using namespace std;
 
+/* Finn McKinley
+ * A simple Zuul project
+ * 12/13/19
+ */
+
 Printable::~Printable()
 {//Destructor
   delete[] this->description;
