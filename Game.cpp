@@ -45,7 +45,6 @@ void printRoomString(Room*);
 
 int main()
 {
-  char saveInput[80];
   //List of Visited Rooms (for Map)
   vector<char*> encRooms;
   vector<char*>* encRoomsptr = &encRooms;
@@ -176,9 +175,9 @@ int main()
   commandsptr->push_back(new Drop((char*)"DROP"));
   commandsptr->push_back(new Inventory((char*)"INVENTORY"));
   int* e = new int[18];
-  for(int a = 0; a < 18; ++a)
+  for(int i = 0; i < 18; i++)
   {
-    e[a] = 0;
+    e[i] = 0;
   }
   commandsptr->push_back(new Talk((char*)"TALK", e));
   commandsptr->push_back(new Quit((char*)"QUIT"));
@@ -289,15 +288,15 @@ int main()
 	if(finYes && pinYes)
 	{
 	  cout << "Hey, that's my fin! Gimme!" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "The pufferfish starts to expand at a rapid pace!" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "Luckily, Peter Jin's Safety Pin was sticking out of your bag at just the right angle, and the pufferfish gets caught at the point and rapidly deflates." << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 
@@ -314,15 +313,15 @@ int main()
 	else if(finYes && pinYes == false)
 	{
 	  cout << "Hey, that's my fin! Gimme!" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "The pufferfish starts to expand at a rapid pace!" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "(You barely make it out of the room before you're impaled to the wall by poisonous spikes)" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  
@@ -364,7 +363,7 @@ int main()
 
 	  char buffer[3];
 	  
-      	  cin.get(buffer, 3);
+      	  cin.getline(buffer, 3);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 
@@ -430,23 +429,23 @@ int main()
 	if(mandYes)
 	{
 	  cout << "(Mr.sbarK is drawn out into the dining area by a citrus odor)" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999,'\n');
 	  cout << "Ooh, yummy orange! Gimme~" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999,'\n');
 	  cout << "(Mr.sbarK helps himself to Peter Jin's Mandarin)" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999,'\n');
 	  cout << "(Suddenly, Mr.s'sbarK leg grows back!)" << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999,'\n');
 	  cout << "Ok wow, you beat the puffer, I owe great debt, you're so cool, etc. etc." << endl;
-	  cin.get(buffer, 1);
+	  cin.getline(buffer, 80);
 	  cin.clear();
 	  cin.ignore(999,'\n');
           cout << "Mr.sbarK has joined the party!" << endl;
@@ -462,15 +461,15 @@ int main()
 	{
 	  char scrollText[80];
 	  cout << "Huehuehuehuehuehu--" << endl;
-	  cin.get(scrollText,1);
+	  cin.getline(scrollText, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "PinkFluffyUnicornClam's evil laughter is cut short as two moshpits collide together on top of the clam." << endl;
-	  cin.get(scrollText,1);
+	  cin.getline(scrollText, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "As the unicorn clam shifts an inch, a resounding crack resonated throughout the dam, and the water began pouring forth." << endl;
-	  cin.get(scrollText,1);
+	  cin.getline(scrollText, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "Clam and human were flushed down the river...(safely), and a flickering could be heard in the distance..." << endl;
@@ -534,7 +533,7 @@ int main()
 
 	  char buffer[3];
 	  
-      	  cin.get(buffer, 3);
+      	  cin.getline(buffer, 3);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 
@@ -560,24 +559,24 @@ int main()
 		delete (*bagIt);
 		bagIt = bag.erase(bagIt);
 	      }else{
-		++bagIt;
+		bagIt++;
 	      }
 	    }
 	  event[11] = 2;
 	  cout << "Mr.sbarK helps you put the saucepan on the stove..." << endl;
-	  cin.get(scrollText, 1);
+	  cin.getline(scrollText, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "You snap the fan open and start to fan the fire... wait, is that even doing anything?" << endl;
-	  cin.get(scrollText, 1);
+	  cin.getline(scrollText, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "You take the WOOL from the lamb and ram, to use as all-natural protein, as to not offend PETA" << endl;
-	  cin.get(scrollText, 1);
+	  cin.getline(scrollText, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "Then you stir... and WA-LA! Peter Pan's Universal Flan appears in front of you!" << endl;
-	  cin.get(scrollText, 1);
+	  cin.getline(scrollText, 80);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 	  cout << "It turns out that Mr.sbarK is actually Mr.Krabs from spongebob! Wow! He adds this recipe to his prabby catties, with a patent on it, and you live happily ever after, rich for the rest of your life! (Sorry, short on time, GGs tho! Thx for playing!" << endl;
@@ -585,7 +584,7 @@ int main()
 	  
 	  printRoomString(currentRoom);
 	  }  
-	  }
+	}
       }
     }else if(currentRoom == (*rm)[(char*)"The Oikura Residence"]){
       if(event[12] == true){
@@ -618,9 +617,9 @@ int main()
 	    cout << "Offer Jin & Out Fries? (y/n)" << endl;
 	  }
 
-	  char buffer[3] = "";
+	  char buffer[3];
 	  
-      	  cin.get(buffer, 3);
+      	  cin.getline(buffer, 3);
 	  cin.clear();
 	  cin.ignore(999, '\n');
 
@@ -640,7 +639,7 @@ int main()
 	          delete (*bagIt);
 		  bagIt = bag.erase(bagIt);
 		}else{
-		  ++bagIt;
+		  bagIt++;
 		}
 	      }
 	    }
@@ -671,34 +670,36 @@ void buildRoom (map<char*,Room*>* rm, char* rmTitle, char* rmDescription) {
 
 //process userin, decide if it is one or two words, then return one or two words
 void processInput(char* commandstr, char* keywordstr){
-  char in[99];
-  while(true){
+  char in[80];
+  while(true)
+  {
     int spaces = 0;
     
-    cin.get(in, 99);
+    cin.getline(in, 80);
     cin.clear();
     cin.ignore(999, '\n');
     
     if(strlen(in) != 0){
-      for(int a = 0; a < strlen(in); ++a)
+      for(int i = 0; i < strlen(in); i++)
       {
-      	in[a] = toupper(in[a]);
-        if(in[a] == ' ')
+      	in[i] = toupper(in[i]);
+        if(in[i] == ' ')
 	{
-	  ++spaces;
+	  spaces++;
         }
       }
       //If there are no spaces just return
       if(spaces == 0){
-        strcpy(commandstr,in);
-	strcpy(keywordstr,"");
+        strcpy(commandstr, in);
+	strcpy(keywordstr, "");
 	break;
 	//If there is 1 space make sure that there are characters to the left and right of the space
-      }else if(spaces == 1){
+      }
+      else if(spaces == 1){
 	int index;
-	for(int a = 0; a < strlen(in); ++a){
-	  if(in[a] == ' '){
-	    index = a;
+	for(int i = 0; i < strlen(in); i++){
+	  if(in[i] == ' '){
+	    index = i;
 	    break;
 	  }
 	}
@@ -707,11 +708,11 @@ void processInput(char* commandstr, char* keywordstr){
 	  char first[index+1] = "";
 	  char second[(strlen(in)-index)] = "";
 	  
-	  for(int a = 0; a < index; ++a){
-	    first[a] = in[a];
+	  for(int i = 0; i < index; i++){
+	    first[i] = in[i];
 	  }
-	  for(int a = index + 1; a < strlen(in); ++a){
-	    second[a-index-1] = in[a];
+	  for(int i = index + 1; i < strlen(in); i++){
+	    second[i-index-1] = in[i];
 	  }
 	  strcpy(commandstr,first);
 	  strcpy(keywordstr,second);
