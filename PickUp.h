@@ -6,9 +6,10 @@
 #include "Item.h"
 #include "Room.h"
 
-class Grab : public Command {
+class PickUp : public Command
+{
  public:
-  Grab(char*);
+  PickUp(char*);
   int getType();
   char* returnBurn();
   //Give: current room, player inventory, specified itemName 
