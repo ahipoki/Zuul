@@ -1,48 +1,59 @@
 #include <iostream>
 #include <cstring>
-#include <vector>
-#include <iterator>
-#include <map>
-#include "Item.h"
 #include "Room.h"
 
-Room::Room(char* newTitle, char* newDescription, vector<Item*>* newItems, map<char*, char*>* newExits){
-  title = newTitle;
-  description = newDescription;
-  items = newItems;
-  exits = newExits;
+using namespace std;
+
+Printable::~Printable(){
+  delete[] this->description;
+  delete[] this->name;
 }
 
-char* Room::getTitle(){
-  //cout << "???" << endl;
-  return title;
+void Printable::print()
+{
+  cout << CC_BLD << CC_BLU << (this->name) << CC_CLR << endl;
+  cout << (this->description) << endl;
 }
 
-char* Room::getDescription(){
-  return description;
+void Printable::init(char const* name, char const* description)
+{
+  this->description = new char[strlen(description) + 1];
+  this->name = new char[strlen(name) + 1];
+  strcpy(this->description, description);
+  strcpy(this->name, name);
 }
 
-vector<Item*>* Room::getItems(){
-  return items;
+void Room::printext()
+{
+  cout << CC_GRN << "Exits: " << CC_CLR;
+  for (int i = 0; i < 4; i++)
+  {
+    if (this->rooms.count(i) > 0) {
+      cout << CC_CYN << (DIRS[i]) << CC_CLR << ": " << (this->rooms[i]->name) << " ";
+    }
+  }
+  cout << endl;
 }
 
-map<char*, char*>* Room::getExits(){
-  //Need to get cardinal directions later
-  return exits;
+void Room::printItem()
+{
+  cout << CC_GRN << "Items: " << CC_CLR;
+  vector<Item*>::iterator it = this->items.begin();
+  while (it != this->items.end()) {
+    cout << ((*it)->name) << " ";
+    it++;
+  }
+  cout << endl;
 }
 
-Room* Room::getExitRoom(){
-  //Hashmap direction
-}
-
-void Room::setDescription(char* newDescription){
-  description = newDescription;
-}
-
-void Room::setExit(char* direction, char* destination){
-  (*exits)[direction] = destination; 
-}
-
-void Room::addItem(char* itemName){
-  items->push_back(new Item(itemName));
+void Room::deleteItem(Item* toDelete)
+{
+  vector<Item*>::iterator it = this->items.begin();
+  while (it != (this->items.end())) {
+    if ((*it) == toDelete) {
+      this->items.erase(it);
+      return;
+    }
+    it++;
+  }
 }
