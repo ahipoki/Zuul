@@ -11,6 +11,11 @@
 
 using namespace std;
 
+/* Finn McKinley
+ * A simple Zuul project
+ * 12/13/19
+ */
+
 const char* const DIRS[] = { "NORTH", "EAST", "SOUTH", "WEST" };
 //Directions
 
