@@ -12,19 +12,6 @@ using namespace std;
 
 const char* const DIRS[] = { "NORTH", "EAST", "SOUTH", "WEST" };
 
-class Printable {
- public:
-  ~Printable();
-  char* description;
-  char* name;
-  void print();
-  void init(char const* name, char const* description);
-};
-
-class Item : public Printable {
-
-};
-
 class Room : public Printable {
  public:
   void printext();
