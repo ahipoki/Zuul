@@ -190,32 +190,50 @@ void Talk::act(map<char*, Room*>* rm, Room** currentRoom, vector<Item*>* bag)
       }
       if (strcmp(scrollText, "SAVE") == 0)
       {
-        cout << endl;
+        cout << "You pick Kiss-shot up and bring her to your neck." << endl;
+        cout << "Kiss-shot: I-It's alright to?" << endl;
+        cout << "Araragi: Of course it's not alright, you bastard. Damnit... damnit... damnit... Why... How did I end up like this? I'll do better in my next life... I'll be clever, and be able to blame someone else for anything unpleasant. I'll definitely reincarnate as someone slick. So... I will save you. Drink my blood. I'll give it all to you. Every last drop. Drain it all." << endl;
+        cout << "Kiss-shot: Thank you." << endl;
+        cout << "At this point, Kiss-shot bites your neck and starts drinking your blood. But, this is nott he end of your story." << endl;
       }
       else if (strcmp(scrollText, "RUN) == 0)
       {
-        
+        cout << "You decided to run away. As soon as you start going away and she realizes that you have no intent on saving her, she starts crying and apologizing. It almost sounds like a baby crying." << endl;
+        cout << "Kiss-shot: I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry. I'm sorry." << endl;
+        cout << "You continue running but as you start getting further away, you start rethinking your decision. You start slowly walking back and sit down on some stairs where you start talking to yourself." << endl;
+        cout << "Araragi: I'll die if I save her. Besides, she's a monster. She's a vampire. I don't need to save her. Isn't that right? I know that already!" << endl;
+        cout << "Something in the core of your very being won't let you abandon her. Even among all these things. You run back to Kiss-shot and shout to her." << endl;
+        cout << "Araragi: Don't give up idiot!" << endl;
+        cout << "Kiss-shot looks up to you in complete surprise that you aren't leaving her to die. You pick her up and bring her to your neck." << endl;
+        cout << "Kiss-shot: I-It's alright to...?" << endl;
+        cout << "Araragi: Of course it's not alright, you bastard. Damnit... Damnit... Damnit... Why... How did I end up like this? I'll do better in my next life. I'll be clever, and be able to blame someone else for anything unpleasant. I'll definitely reincarnate as someone slick. So... I will save you. Drink my blood. I'll give it all to you. Every last drop. Drain it all." << endl;
+        cout << "Kiss-shot: Thank you." << endl;
+        cout << "At this point, Kiss-shot bites your neck and starts drinking your blood. But, this is not the end of your story." << endl;
       }
       event[4] = true;
-    }
-    else if(event[4] == true)
-    {//Fix
-      //cout << "Hey there! Sorry, but I'll have to pass on letting you pass!" << endl;
-      //cin.get(scrollText, 999);
-      //cin.clear();
-      //cin.ignore(999, '\n');
-      //After it's gone
+      currentRoom = "Eikou Cram School";
     }
     else
     {//Fix
       //cout << "*blub* *blub*" << endl;
     }
   }
-  else if(strcmp((*currentRoom)->getTitle(), "Haga Books") == 0)
+  else if(strcmp((*currentRoom)->getTitle(), "Eikou Cram School") == 0)
   {
-    if(event[6] == false)
+    if(event[5] == false)
     {
-      cout << "Hey yo! Are you Peter Pan's Fan? Of course you are! (A folded fan slaps you right on the forhead)" << endl;
+      cout << "Some time later, Yyou suddenly wake up and to your comlete shock you aren't dead and there's a little girl sleeping near you." << endl;
+      cout << "Araragi: H-Hey..." << endl;
+      cout << "You try and shake the girl to wake her up." << endl;
+      //Possible choice
+      cout << "Araragi: W-Wake up." << endl;
+      cout << "???: Five more minutes..." << endl;
+      cout << "Araragi: C-Come on, wake up." << endl;
+      cout << "???: After... feeling..." << endl;
+      cout << "Araragi: How long do you plan on sleeping for?" << endl;
+      cout << "???: About 4.6 billion years?" << endl;
+      cout << "Araragi: Another Earth could form!" << endl;
+      cout << "You look at your watch
       cin.get(scrollText, 999);
       cin.clear();
       cin.ignore(999, '\n');
