@@ -1,29 +1,35 @@
-#ifndef ROOM_H
-#define ROOM_H
-
-#include <iostream>
-#include <cstring>
+#pragma once
 #include <vector>
 #include <map>
-#include "Item.h"
+
+#define CC_BLD "\033[1m"
+#define CC_BLU "\033[34m"
+#define CC_GRN "\033[32m"
+#define CC_CLR "\033[0m"
+#define CC_CYN "\033[36m"
 
 using namespace std;
 
-class Room{
+const char* const DIRS[] = { "NORTH", "EAST", "SOUTH", "WEST" };
+
+class Printable {
  public:
-  Room(char*, char*, vector<Item*>*, map<char*, char*>*);
-  char* getTitle();
-  char* getDescription();
-  vector<Item*>* getItems();
-  map<char*, char*>* getExits();
-  Room* getExitRoom();
-  void setDescription(char*);
-  void setExit(char*, char*);
-  void addItem(char*);
- private:
-  char* title;
+  ~Printable();
   char* description;
-  vector<Item*>* items;
-  map<char*, char*>* exits;
+  char* name;
+  void print();
+  void init(char const* name, char const* description);
 };
-#endif
+
+class Item : public Printable {
+
+};
+
+class Room : public Printable {
+ public:
+  void printext();
+  void printItem();
+  void deleteItem(Item* toDelete);
+  map<char, Room*> rooms;
+  vector<Item*> items;
+};
