@@ -68,18 +68,6 @@ int main()
 
       delete[] direction;
     }
-    else if(strcmp(command, "ROOM") == 0)
-    {
-      currentRoom->print();
-    }
-    else if(strcmp(command, "ITEMS") == 0)
-    {
-      currentRoom->printItem();
-    }
-    else if(strcmp(command, "EXITS") == 0)
-    {
-      currentRoom->printext();
-    }
     else if(strcmp(command, "PICKUP") == 0)
     {
       int arglen = wordlen(input, commandlen + 1);
@@ -116,22 +104,6 @@ int main()
       }
       delete[] item;
     }
-    else if(strcmp(command, "INSPECT") == 0)
-    {
-      int arglen = wordlen(input, commandlen + 1);
-      char* item = new char[arglen + 1];
-      item[arglen] = '\0';
-      strncpy(item, input + commandlen + 1, arglen);
-      strupper(item);
-
-      Item* topick = findItem(item, &items);
-      if(topick == NULL) cout << "No such item." << endl;
-      else
-      {
-        topick->print();
-      }
-      delete[] item;
-    }
     else if(strcmp(command, "INVENTORY") == 0)
     {
       cout << CC_GRN << "Inventory: " << CC_CLR;
@@ -146,7 +118,7 @@ int main()
     else if(strcmp(command, "HELP") == 0)
     {
       cout << CC_GRN << "Find all the items!" << endl;
-      cout << CC_CYN << "Commands: QUIT, GO, ROOM, ITEMS, EXITS, PICKUP, DROP, INSPECT, INVENTORY, HELP" << endl;
+      cout << CC_CYN << "Commands: QUIT, GO, PICKUP, DROP, INVENTORY, HELP" << endl;
       cout << CC_BLU << "Commands are not case sensitive!" << CC_CLR << endl;
     }
     else
@@ -246,6 +218,12 @@ Room* createRooms(vector<Room*> &rooms, vector<Item*> &items)
   Room* rd7 = new Room();
   rd7->init("A road between the Araragi Residence and Haga Books", "EroBooks");
   rooms.push_back(rd7);
+  Room* h1 = new Room();
+  h1->init("A hallway leading to a storage shed", "Hallway");
+  rooms.push_back(h1);
+  Room* h2 = new Room();
+  h2->init("A hallway leading to the rooftop", "Hallway");
+  rooms.push_back(h1);
 
   //Exits
   //0 = NORTH
@@ -282,10 +260,10 @@ Room* createRooms(vector<Room*> &rooms, vector<Item*> &items)
   //md3->rooms[3] = md2;
 
   //Items
-  Item* riverRock = new Item();
-  riverRock->init("River_Rock", "A river rock.");
-  araragiHouse->items.push_back(riverRock);
-  items.push_back(riverRock);
+  Item* magazine = new Item();
+  riverRock->init("Exciting_Magazine", "An exciting magazine.");
+  bookStore->items.push_back(magazine);
+  items.push_back(magazine);
   Item* rake = new Item();
   rake->init("Rake", "For your yard.");
   araragiHouse->items.push_back(rake);
