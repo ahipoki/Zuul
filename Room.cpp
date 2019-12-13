@@ -28,14 +28,39 @@ void Printable::init(char const* name, char const* description)
 {//Initialize
   this->description = new char[strlen(description) + 1];
   //New description
-  this->name = new char[strlen(description) + 1];
+  this->name = new char[strlen(name) + 1];
   //New name
-  strcpy(this->desription, description);
+  strcpy(this->description, description);
   //Copy the description to the new description
   strcpy(this->name, name);
   //Copy the name to the new name
 }
 
+void Room::printext()
+{
+  cout << CC_GRN << "Exits: " << CC_CLR;
+  for (int i = 0; i < 4; i++)
+  {
+    if (this->rooms.count(i) > 0)
+    {
+      cout << CC_CYN << (DIRS[i]) << CC_CLR << ": " << (this->rooms[i]->name) << " ";
+    }
+  }
+  cout << endl;
+}
+
+void Room::printItem()
+{
+  cout << CC_GRN << "Items: " << CC_CLR;
+  vector<Item*>::iterator it = this->items.begin();
+  while (it != this->items.end())
+  {
+    cout << ((*it)->name) << " ";
+    it++;
+  }
+  cout << endl;
+}
+  
 void Room::deleteItem(Item* toDelete)
 {//Delete item
   vector<Item*>::iterator it = this->items.begin();

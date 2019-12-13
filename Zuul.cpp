@@ -166,73 +166,94 @@ int main()
     }
     else if (strcmp(command, "TALK") == 0)
     {//Else if they enter the talk command
+      char scrollText[80];
       int eventCounter = 0;
       //Tracks the current event
-      if (eventCounter == 0 && currentRoom == rd1)
-      {//If it's the first event    
-	//Evens
-        cout << "Araragi: Well, I'll be going now." << endl;
-	cout << "???: Hold on a second!" << endl;
-	cout << "You start walking off and a girl starts chasing after you." << endl;
-	cout << "Araragi: Why do you know my name?" << endl;
-	    cout << "???: What? Of course I'd know. We go to the same school. You're Araragi. Koyomi Araragi." << endl;
-	    cout << "Araragi: You are... Hanekawa. Tsubasa Hanekawa." << endl;
-	    cout << "Hanekawa: Wow. Amazing, you know the name of someone like me." << endl;
-	    cout << "Araragi: In the final exam of the first term of our second year, for all subjects including PE and Art, you were the only one who correctly answered every question except for one." << endl;
-	    cout << "Hanekawa: Wait a minute. Oh dear, why do you know so much? Can it be that you're a stalker following me? Maybe that's going a little too far, huh?" << endl;
-	    cout << "Araragi: That's not it. I heard it from my alien friend." << endl;
-	    cout << "Hanekawa: What? You actually have friends?" << endl;
-	    cout << "Araragi: Ask whether or not there are aliens first!" << endl;
-	    cout << "Hanekawa: Well, my impression was that you were always alone, and kept to yourself." << endl;
-	    cout << "Araragi: Well, you were right. I admit I don't have any friends. Even a guy with no friends like me knows who you are. That means you're famous." << endl;
-	    cout << "Hanekawa: Don't say that. I don't like jokes like that very much. You know, Araragi... Araragi, do you believe that vampires exist?" << endl;
-	    cout << "Araragi: What about vampires?" << endl;
-	    cout << "Hanekawa: Recently, there's something of a rumor going around. That there's a vampire in town right now. So you shouldn't walk around alone at night." << endl;
-	    cout << "Araragi: So vague... And that rumor is completely lacking credibility." << endl;
-	    cout << "Hanekawa: They say the vampire is a very beautiful blonde woman who has eyes so cold it makes your spine freeze." << endl;
-	    cout << "Araragi: You couldn't tell whether or not she's a vampire just from that. Maybe she's just an ordinary citizen who stands out simply because she's blonde?" << endl;
-	    cout << "Hanekawa: But, while lit by a streetlight, despite her blonde hair being almost too bright to look at, she had no shadow, so they say." << endl;
-	    cout << "Araragi: But still, it was evening, it could be a mistake, even if she was lit by the streetlight, don't you think?" << endl;
-	    cout << "Hanekawa: Yeah, I also think it's a ridiculous rumor. However, if there actually was a vampire, I think I'd like to meet it. Something superior to humans like that... It'd be nice if it actually existed." << endl;
-	    cout << "Araragi: Superior to humans? You mean like a god or something?" << endl;
-	    cout << "Hanekawa: It doesn't necessarily have to be a god or anything. Because we aren't rewarded otherwise, right? Oops, I've said too much! Araragi, you're a much easier person to speak with than I expected. My tongue slipped, and I may have said something weird. If you're this easy to speak with, it's strange you have no friends. Why don't you make any friends?" << endl;
-	    cout << "Araragi: Because if I make friends, my strength as a human decreases." << endl;
-	    cout << "Hanekawa: What? I'm sorry. I don't quite understand what you mean." << endl;
-	    cout << "Araragi: Well, I put it... How do I put it... If I had friends, I'd have to look out for those friends, right? If my friends got hurt, I'd get hurt too. If my friend is sad, I'm also sad. In other words, I think it means you become more vulnerable. That's clearly being weakened as a human." << endl;
-	    cout << "Hanekawa: But, if your friend is having fun, you're having fun too and if your friend is happy, you're also happy. So it doesn't necessarily mean you're becoming weaker." << endl;
-	    cout << "Araragi: No. When my friend is having fun, I feel jealous, and when my friend is happy, I feel envious." << endl;
-	    cout << "Hanekawa: Jeez, you're so narrow minded." << endl;
-	    cout << "Araragi: Leave me alone." << endl;
-	    cout << endl;
-	    cout << "Hanekawa: I'm going to the library now. Araragi, would you like to come with me?" << endl;
-	    cout << "Araragi: Why? What would we do at the library?" << endl;
-	    cout << "Hanekawa: We'd study of course." << endl;
-	    cout << "Araragi: Of course? Unfortunately, I'm not so diligent that I'd voluntarily study during spring break when there's not any homework." << endl;
-	    cout << "Hanekawa: But next year, we'll have to study for college entrance exams, you know?" << endl;
-	    cout << "Araragi: Entrance exams or not...I don't even know if I'll graduate high school. No matter what I do now, I won't make it in time." << endl;
-	    cout << "Hanekawa: I see... Araragi, do you have a cellphone?" << endl;
-	    cout << "Araragi: Of course I do." << endl;
-	    cout << "Hanekawa: Give it." << endl;
-	    cout << CC_BLU << "You hand your phone over to her." << CC_CLR << endl;
-	    cout << "Hanekawa: Thanks. Here!" << endl;
-	    cout << CC_BLU << "She hands you back your phone after typing some stuff in. She then runs across the street as the crossing signal changes. She stops halfway across." << CC_CLR << endl;
-	    cout << "Hanekawa: I entered my phone number and emal address into it. How unfortunate! You just made a friend." << endl;
-	    cout << CC_BLU << "You stare in confusion while Hanekawa walks away and waves goodbye to you." << CC_CLR << endl;
-	    cout << "Araragi: What's with her?" << endl;
-	    eventCount++;
-	    //Move to the next event
+      if (eventCounter == 0)
+      {//If it's the first event
+	//char* nameCompare = this->name();
+	//if (strcmp(this->name(), "rd1") == 0)
+	//{
+	  cout << "Araragi: Well, I'll be going now." << endl;
+	  cout << "???: Hold on a second!" << endl;
+	  cout << "You start walking off and a girl starts chasing after you." << endl;
+	  cout << "Araragi: Why do you know my name?" << endl;
+	  cin.getline(scrollText, 80);
+	  cin.ignore(999, '\n');
+	  cout << "???: What? Of course I'd know. We go to the same school. You're Araragi. Koyomi Araragi." << endl;
+	  cout << "Araragi: You are... Hanekawa. Tsubasa Hanekawa." << endl;
+	  cout << "Hanekawa: Wow. Amazing, you know the name of someone like me." << endl;
+	  cout << "Araragi: In the final exam of the first term of our second year, for all subjects including PE and Art, you were the only one who correctly answered every question except for one." << endl;
+	  cin.getline(scrollText, 80);
+	  //cin.ignore(999, '\n');
+	  cout << "Hanekawa: Wait a minute. Oh dear, why do you know so much? Can it be that you're a stalker following me? Maybe that's going a little too far, huh?" << endl;
+	  cout << "Araragi: That's not it. I heard it from my alien friend." << endl;
+	  cout << "Hanekawa: What? You actually have friends?" << endl;
+	  cout << "Araragi: Ask whether or not there are aliens first!" << endl;
+	  cout << "Hanekawa: Well, my impression was that you were always alone, and kept to yourself." << endl;
+	  cin.getline(scrollText, 80);
+	  cout << "Araragi: Well, you were right. I admit I don't have any friends. Even a guy with no friends like me knows who you are. That means you're famous." << endl;
+	  cout << "Hanekawa: Don't say that. I don't like jokes like that very much. You know, Araragi... Araragi, do you believe that vampires exist?" << endl;
+	  cout << "Araragi: What about vampires?" << endl;
+	  cout << "Hanekawa: Recently, there's something of a rumor going around. That there's a vampire in town right now. So you shouldn't walk around alone at night." << endl;
+	  cout << "Araragi: So vague... And that rumor is completely lacking credibility." << endl;
+	  cout << "Hanekawa: They say the vampire is a very beautiful blonde woman who has eyes so cold it makes your spine freeze." << endl;
+	  cin.getline(scrollText, 80);
+	  cout << "Araragi: You couldn't tell whether or not she's a vampire just from that. Maybe she's just an ordinary citizen who stands out simply because she's blonde?" << endl;
+	  cout << "Hanekawa: But, while lit by a streetlight, despite her blonde hair being almost too bright to look at, she had no shadow, so they say." << endl;
+	  cout << "Araragi: But still, it was evening, it could be a mistake, even if she was lit by the streetlight, don't you think?" << endl;
+	  cout << "Hanekawa: Yeah, I also think it's a ridiculous rumor. However, if there actually was a vampire, I think I'd like to meet it. Something superior to humans like that... It'd be nice if it actually existed." << endl;
+	  cin.getline(scrollText, 80);
+	  cout << "Araragi: Superior to humans? You mean like a god or something?" << endl;
+	  cout << "Hanekawa: It doesn't necessarily have to be a god or anything. Because we aren't rewarded otherwise, right? Oops, I've said too much! Araragi, you're a much easier person to speak with than I expected. My tongue slipped, and I may have said something weird. If you're this easy to speak with, it's strange you have no friends. Why don't you make any friends?" << endl;
+	  cout << "Araragi: Because if I make friends, my strength as a human decreases." << endl;
+	  cin.getline(scrollText, 80);
+	  cout << "Hanekawa: What? I'm sorry. I don't quite understand what you mean." << endl;
+	  cout << "Araragi: Well, I put it... How do I put it... If I had friends, I'd have to look out for those friends, right? If my friends got hurt, I'd get hurt too. If my friend is sad, I'm also sad. In other words, I think it means you become more vulnerable. That's clearly being weakened as a human." << endl;
+	  cout << "Hanekawa: But, if your friend is having fun, you're having fun too and if your friend is happy, you're also happy. So it doesn't necessarily mean you're becoming weaker." << endl;
+	  cin.getline(scrollText, 80);
+	  cout << "Araragi: No. When my friend is having fun, I feel jealous, and when my friend is happy, I feel envious." << endl;
+	  cout << "Hanekawa: Jeez, you're so narrow minded." << endl;
+	  cout << "Araragi: Leave me alone." << endl;
+	  cin.getline(scrollText, 80);
+	  //cout << endl;
+	  cout << "Hanekawa: I'm going to the library now. Araragi, would you like to come with me?" << endl;
+	  cout << "Araragi: Why? What would we do at the library?" << endl;
+	  cout << "Hanekawa: We'd study of course." << endl;
+	  cout << "Araragi: Of course? Unfortunately, I'm not so diligent that I'd voluntarily study during spring break when there's not any homework." << endl;
+	  cout << "Hanekawa: But next year, we'll have to study for college entrance exams, you know?" << endl;
+	  cin.getline(scrollText, 80);
+	  cout << "Araragi: Entrance exams or not...I don't even know if I'll graduate high school. No matter what I do now, I won't make it in time." << endl;
+	  cout << "Hanekawa: I see... Araragi, do you have a cellphone?" << endl;
+	  cout << "Araragi: Of course I do." << endl;
+	  cout << "Hanekawa: Give it." << endl;
+	  cout << CC_BLU << "You hand your phone over to her." << CC_CLR << endl;
+	  cout << "Hanekawa: Thanks. Here!" << endl;
+	  cout << CC_BLU << "She hands you back your phone after typing some stuff in. She then runs across the street as the crossing signal changes. She stops halfway across." << CC_CLR << endl;
+	  cout << "Hanekawa: I entered my phone number and emal address into it. How unfortunate! You just made a friend." << endl;
+	  cout << CC_BLU << "You stare in confusion while Hanekawa walks away and waves goodbye to you." << CC_CLR << endl;
+	  cout << "Araragi: What's with her?" << endl;
+	  eventCounter++;
+	  //Move to the next event
+	  //}
       }
-      else if (eventCounter == 1 && currentRoom == araragiHouse)
+      else if (eventCounter == 1)
       {//If it's the second event
-        cout << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << endl;
-	//Events
-	//change color
-        eventCounter++; 
-	//Move to the third event
+	//if (strcmp(currentRoom, "araragiHouse") == 0)
+	//{
+	  cout << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << endl;
+	  //Events
+	  //change color
+	  eventCounter++; 
+	  //Move to the third event
+	  //}
       }
-      else if (eventCounter == 2 && currentRoom == bookStore) 
+      else if (eventCounter == 2)
       {
-        eventCounter++;
+	//if (strcmp(currentRoom, "bookStore") == 0) 
+	//{
+	  eventCounter++;
+	  //}
       }
     }
     else if(strcmp(command, "HELP") == 0)
@@ -364,56 +385,64 @@ Room* createRooms(vector<Room*> &rooms, vector<Item*> &items)
   araragiHouse->rooms[3] = rd1;
   rd1->rooms[1] = araragiHouse;
   cramSchool->rooms[0] = rd3;
-  //str2->rooms[2] = str1;
-  //str2->rooms[0] = bff;
-  //bff->rooms[2] = str2;
-  //bff->rooms[3] = bs;
-  //bs->rooms[1] = bff;
-  //str1->rooms[1] = md1;
-  //md1->rooms[3] = str1;
-  //md1->rooms[1] = tb;
-  //tb->rooms[3] = md1;
-  //tb->rooms[0] = uv;
-  //uv->rooms[2] = tb;
-  //tb->rooms[1] = er;
-  //er->rooms[3] = tb;
-  //er->rooms[0] = uv2;
-  //uv2->rooms[2] = er;
-  //uv2->rooms[0] = md3;
-  //md3->rooms[2] = uv2;
-  //uv2->rooms[3] = uv;
-  //uv->rooms[1] = uv2;
-  //uv->rooms[0] = md2;
-  //md2->rooms[2] = uv;
-  //md2->rooms[1] = md3;
-  //md3->rooms[3] = md2;
+  cramSchool->rooms[1] = rd4;
+  cramSchool->rooms[2] = h1;
+  cramSchool->rooms[3] = rd5;
+  highSchool->rooms[1] = rd1;
+  highSchool->rooms[2] = rd3;
+  subwayStation->rooms[1] = rd5;
+  subwayStation->rooms[3] = rd2;
+  rooftop->rooms[3] = h2;
+  stadium->rooms[3] = rd4;
+  bookStore->rooms[0] = rd7;
+  bookStore->rooms[2] = rd6;
+  bookStore->rooms[1] = rd2;
+  storageShed->rooms[1] = h2;
+  storageShed->rooms[0] = h1;
+  convenienceStore->rooms[0] = rd6;
+  rd1->rooms[3] = highSchool;
+  rd2->rooms[1] = subwayStation;
+  rd2->rooms[3] = bookStore;
+  rd3->rooms[2] = cramSchool;
+  rd3->rooms[0] = highSchool;
+  rd4->rooms[3] = cramSchool;
+  rd4->rooms[1] = stadium;
+  rd5->rooms[3] = subwayStation;
+  rd5->rooms[1] = cramSchool;
+  rd6->rooms[0] = bookStore;
+  rd6->rooms[2] = convenienceStore;
+  rd7->rooms[2] = bookStore;
+  h1->rooms[0] = cramSchool;
+  h1->rooms[2] = storageShed;
+  h2->rooms[1] = rooftop;
+  h2->rooms[3] = storageShed;
 
   //Items
   //A new item
   //Add the item's name and description
   //Add the item to the vector of items
   Item* magazine = new Item();
-  riverRock->init("Exciting_Magazine", "An exciting magazine.");
+  magazine->init("Exciting_Magazine", "An exciting magazine.");
   bookStore->items.push_back(magazine);
   items.push_back(magazine);
   Item* rake = new Item();
-  rake->init("Rake", "For your yard.");
-  araragiHouse->items.push_back(rake);
+  rake->init("Rake", "Use in your yard.");
+  convenienceStore->items.push_back(rake);
   items.push_back(rake);
   Item* gc = new Item();
-  gc->init("Gold_Coin", "The troll's charm.");
-  araragiHouse->items.push_back(gc);
+  gc->init("Gold_Coin", "A gold coin");
+  rd7->items.push_back(gc);
   items.push_back(gc);
   Item* u = new Item();
-  u->init("Unicorn", "...Why?");
-  araragiHouse->items.push_back(u);
+  u->init("Unicorn", "What even?");
+  h2->items.push_back(u);
   items.push_back(u);
   Item* hl = new Item();
   hl->init("Heart_Locket", "<3");
-  araragiHouse->items.push_back(hl);
+  stadium->items.push_back(hl);
   items.push_back(hl);
 
-  return araragiHouse;
+  return highSchool;
 }
 
 int wordlen(char* array, int start)
