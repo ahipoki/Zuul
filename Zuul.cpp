@@ -222,13 +222,17 @@ int main()
 	    eventCount++;
 	    //Move to the next event
       }
-      else if (eventCount == 1 && currentRoom == araragiHouse)
+      else if (eventCounter == 1 && currentRoom == araragiHouse)
       {//If it's the second event
         cout << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << endl;
 	//Events
 	//change color
         eventCounter++; 
 	//Move to the third event
+      }
+      else if (eventCounter == 2 && currentRoom == bookStore) 
+      {
+        eventCounter++;
       }
     }
     else if(strcmp(command, "HELP") == 0)
