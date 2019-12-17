@@ -36,6 +36,16 @@ void Printable::init(char const* name, char const* description)
   //Copy the name to the new name
 }
 
+Room::Room(char* newTitle)
+{
+  title = newTitle;
+}
+
+char* Room::getTitle()
+{
+  return title;
+}
+
 void Room::printext()
 {
   cout << CC_GRN << "Exits: " << CC_CLR;
