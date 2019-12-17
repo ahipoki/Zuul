@@ -31,7 +31,7 @@ int main()
   //Still playing
   char input[80];
   //User input
-  int roomCounter = 0;
+  //int roomCounter = 0;
   cout << CC_GRN << "Find all the items!" << endl;
   //Tell the user to find all the items
   cout << CC_CYN << "Commands: QUIT, GO, PICKUP, DROP, INVENTORY, TALK, HELP" << endl;
@@ -171,7 +171,7 @@ int main()
       char scrollText[80];
       int eventCounter = 0;
       //Tracks the current event
-      if (eventCounter == 0 && )
+      if (eventCounter == 0 && (strcmp(currentRoom->getTitle(), "highSchool") == 0))
       {//If it's the first event
 	//char* nameCompare = this->name();
 	//if (strcmp(this->name(), "rd1") == 0)
@@ -287,7 +287,7 @@ int main()
 	  //Move to the next event
 	  //}
       }
-      else if (eventCounter == 1)
+      else if (eventCounter == 1 && (strcmp(currentRoom->getTitle(), "araragiHouse") == 0))
       {//If it's the second event
 	//if (strcmp(currentRoom, "araragiHouse") == 0)
 	//{
@@ -298,12 +298,9 @@ int main()
 	  //Move to the third event
 	  //}
       }
-      else if (eventCounter == 2)
+      else if (eventCounter == 2 && (strcmp(currentRoom->getTitle(), "bookStore") == 0))
       {
-	//if (strcmp(currentRoom, "bookStore") == 0) 
-	//{
-	  eventCounter++;
-	  //}
+        eventCounter++;
       }
     }
     else if(strcmp(command, "HELP") == 0)
