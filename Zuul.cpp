@@ -289,16 +289,16 @@ int main()
       }
       else if (eventCounter == 1 && (strcmp(currentRoom->getTitle(), "araragiHouse") == 0))
       {//If it's the second event
-	//if (strcmp(currentRoom, "araragiHouse") == 0)
-	//{
-	  cout << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << endl;
-	  //Events
-	  //change color
-	  eventCounter++; 
-	  //Move to the third event
-	  //}
+        cout << CC-BLU << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << CC_CLR << endl;
+	eventCounter++; 
+	//Move to the third event
       }
       else if (eventCounter == 2 && (strcmp(currentRoom->getTitle(), "bookStore") == 0))
+      {
+	cout << "You " << endl;
+        eventCounter++;
+      }
+      else if (eventCounter == 3 && (strcmp(currentRoom->getTitle(), "rd2") == 0))
       {
         eventCounter++;
       }
