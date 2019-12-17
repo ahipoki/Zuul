@@ -31,6 +31,7 @@ int main()
   //Still playing
   char input[80];
   //User input
+  int roomCounter = 0;
   cout << CC_GRN << "Find all the items!" << endl;
   //Tell the user to find all the items
   cout << CC_CYN << "Commands: QUIT, GO, PICKUP, DROP, INVENTORY, TALK, HELP" << endl;
@@ -89,6 +90,7 @@ int main()
       {//Anything else
 	currentRoom = currentRoom->rooms[dirI];
 	//Move to that room      
+	if (currentRoom == "araragiHouse"
 	currentRoom->print();
 	//Print out the room's details      
 	currentRoom->printItem();
