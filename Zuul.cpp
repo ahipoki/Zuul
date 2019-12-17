@@ -169,7 +169,7 @@ int main()
       char scrollText[80];
       int eventCounter = 0;
       //Tracks the current event
-      if (eventCounter == 0)
+      if (eventCounter == 0 && )
       {//If it's the first event
 	//char* nameCompare = this->name();
 	//if (strcmp(this->name(), "rd1") == 0)
