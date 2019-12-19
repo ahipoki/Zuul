@@ -34,7 +34,7 @@ int main()
   //int roomCounter = 0;
   cout << CC_GRN << "Find all the items!" << endl;
   //Tell the user to find all the items
-  cout << CC_CYN << "Commands: QUIT, GO, PICKUP, DROP, INVENTORY, TALK, HELP" << endl;
+  cout << CC_CYN << "Commands: QUIT, GO, PICKUP, DROP, INVENTORY, TALK, HELP." << endl;
   //Tell the user the list of commands
   cout << CC_BLU << "Commands are not case sensitive!" << CC_CLR << endl;
   //Tell the user the commands are not case sensitive
@@ -178,40 +178,29 @@ int main()
 	//{
 	  cout << "Araragi: Well, I'll be going now." << endl;
 	  cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
+	  cin.ignore(999, '\n');
 	  cout << "???: Hold on a second!" << endl;
-	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
+	  cin.getline(scrollText, 80);
 	  cout << "You start walking off and a girl starts chasing after you." << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Araragi: Why do you know my name?" << endl;
 	  cin.getline(scrollText, 80);
-	  cin.ignore(999, '\n');
 	  cout << "???: What? Of course I'd know. We go to the same school. You're Araragi. Koyomi Araragi." << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Araragi: You are... Hanekawa. Tsubasa Hanekawa." << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Hanekawa: Wow. Amazing, you know the name of someone like me." << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Araragi: In the final exam of the first term of our second year, for all subjects including PE and Art, you were the only one who correctly answered every question except for one." << endl;
 	  cin.getline(scrollText, 80);
-	  //cin.ignore(999, '\n');
 	  cout << "Hanekawa: Wait a minute. Oh dear, why do you know so much? Can it be that you're a stalker following me? Maybe that's going a little too far, huh?" << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Araragi: That's not it. I heard it from my alien friend." << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Hanekawa: What? You actually have friends?" << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Araragi: Ask whether or not there are aliens first!" << endl;
 	      cin.getline(scrollText, 80);
-	      cin.ignore(999, '\n');
 	  cout << "Hanekawa: Well, my impression was that you were always alone, and kept to yourself." << endl;
 	  cin.getline(scrollText, 80);
 	  cout << "Araragi: Well, you were right. I admit I don't have any friends. Even a guy with no friends like me knows who you are. That means you're famous." << endl;
