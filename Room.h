@@ -29,6 +29,7 @@ class Item : public Printable
 
 class Room : public Printable
 {
+  //const char* const DIRS[] = { "NORTH", "EAST", "SOUTH", "WEST" };
   public:
     void printext();
     void printItem();

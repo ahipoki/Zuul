@@ -340,6 +340,7 @@ void strupper(char* str)
 
 int directionToIndex(char* direction)
 {//Get the direction
+  //const char* DIRS[] = { "NORTH", "EAST", "SOUTH", "WEST" };
   strupper(direction);
   //Make the direction input all upper case
   for(int i = 0; i < 4; i ++)
