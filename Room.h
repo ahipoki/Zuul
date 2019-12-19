@@ -37,8 +37,6 @@ class Item : public Printable
 class Room : public Printable 
 {//Room class
  public:
-  Room(char*);
-  char* getTitle();
   void printext();
   void printItem();
   void deleteItem(Item* toDelete);
