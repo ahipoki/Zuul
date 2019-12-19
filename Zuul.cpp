@@ -90,7 +90,7 @@ int main()
       {//Anything else
 	currentRoom = currentRoom->rooms[dirI];
 	//Move to that room      
-	if (currentRoom == "araragiHouse"
+	//if (currentRoom == "araragiHouse")
 	currentRoom->print();
 	//Print out the room's details      
 	currentRoom->printItem();
@@ -171,7 +171,7 @@ int main()
       char scrollText[80];
       int eventCounter = 0;
       //Tracks the current event
-      if (eventCounter == 0 && (strcmp(currentRoom->getTitle(), "highSchool") == 0))
+      if (eventCounter == 0) //&& (strcmp(currentRoom->getTitle(), "highSchool") == 0))
       {//If it's the first event
 	//char* nameCompare = this->name();
 	//if (strcmp(this->name(), "rd1") == 0)
@@ -287,18 +287,18 @@ int main()
 	  //Move to the next event
 	  //}
       }
-      else if (eventCounter == 1 && (strcmp(currentRoom->getTitle(), "araragiHouse") == 0))
+      else if (eventCounter == 1) //&& (strcmp(currentRoom->getTitle(), "araragiHouse") == 0))
       {//If it's the second event
-        cout << CC-BLU << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << CC_CLR << endl;
+        cout << CC_BLU << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << CC_CLR << endl;
 	eventCounter++; 
 	//Move to the third event
       }
-      else if (eventCounter == 2 && (strcmp(currentRoom->getTitle(), "bookStore") == 0))
+      else if (eventCounter == 2) //&& (strcmp(currentRoom->getTitle(), "bookStore") == 0))
       {
 	cout << "You " << endl;
         eventCounter++;
       }
-      else if (eventCounter == 3 && (strcmp(currentRoom->getTitle(), "rd2") == 0))
+      else if (eventCounter == 3) //&& (strcmp(currentRoom->getTitle(), "rd2") == 0))
       {
         eventCounter++;
       }
