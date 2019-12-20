@@ -36,5 +36,4 @@ class Room : public Printable
     void deleteItem(Item* toDelete);
     map<char, Room*> rooms;
     vector<Item*> items;
-    char* title;
 };
