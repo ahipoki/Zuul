@@ -278,7 +278,7 @@ int main()
       }
       else if (eventCounter == 1) //&& (strcmp(currentRoom->getTitle(), "araragiHouse") == 0))
       {//If it's the second event
-        cout << CC_BLU << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urgs become too much for you to handle." << CC_CLR << endl;
+        cout << CC_BLU << "You recount your encounter with Tsubasa Hanekawa earlier that day and the urges become too much for you to handle." << CC_CLR << endl;
 	eventCounter++; 
 	//Move to the third event
       }
